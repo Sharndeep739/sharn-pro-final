@@ -1,16 +1,59 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Form</title>
+    <title>CuisineCraft</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
-    <h2>Register</h2>
-    <form action="process.php" method="POST">
+    <header>
+        <div class="name_cuntry">
+            <div id="indian">Indian</div>
+            <div id="Japanese">Japanese</div>
+            <div id="Korean">Korean</div>
+        </div>
+
+    </header>
+    <main>  
+        <!-- left side conternt  -->
+        <div class="content">
+            <div id="top_line">
+                <i>The real taste of</i>
+            </div>
+            <div id="CuisineCraft">
+                CuisineCraft
+            </div>
+            <div id="food">
+                food
+            </div>
+            <div id="discribe_line">
+                Experience authentic Korean, Japanese, and Indian cuisines on one platform
+            </div>
+            <button name="reg_login" onclick="moveDiv()">
+                Register/Login   
+                <i class="fa-solid fa-angle-right"></i>
+            </button>
+        </div>
+
+        <!-- right side image -->
+         <div class="img">
+            <div id="inner"></div>
+         </div>
+    </main>
+    <footer>
+
+    </footer>
+
+    <!-- <h2>Register</h2>
+    <form action="actions/process.php" method="POST">
         <label>Name:</label>
         <input type="text" name="name" required><br><br>
         <label>Email:</label>
         <input type="email" name="email" required><br><br>
         <input type="submit" value="Submit">
-    </form>
+    </form> -->
+    <script src="script/script.js"></script>
 </body>
 </html>

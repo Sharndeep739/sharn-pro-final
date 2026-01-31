@@ -1,11 +1,13 @@
 let text_bt= true;
+let value=true;
 // move contern in left
 function moveDiv(){
     // dive move
     document.querySelector(".content").classList.toggle("move-right");
     // image hide
-    document.getElementById("imgBox").classList.toggle("hide");
+        document.getElementById("imgBox").classList.toggle("hide");
 
+    
     //  btn_proprty
     let change_btn=document.querySelector(".btn");
     change_btn.classList.toggle("change_btn");
@@ -19,7 +21,17 @@ function moveDiv(){
         change_btn.innerHTML="Register/Login  ";
         text_bt=true;
     }
-    document.getElementById("register_loginBox");
+
+    // show register page
+    if(value){
+        setTimeout(()=>{
+            document.getElementById("register_loginBox").classList.toggle("register_loginBox");    
+        },400);
+        value=false;
+    }else{
+        document.getElementById("register_loginBox").classList.toggle("register_loginBox");    
+        value=true;
+    }
     
 }
 

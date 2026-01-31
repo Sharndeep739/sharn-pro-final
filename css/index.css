@@ -43,10 +43,10 @@ header{
 /* main */
 main{
     height: 70%;
-    width: 100%;  
+    width: 75%;  
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 /* ::content */
 
@@ -58,9 +58,13 @@ main{
     left: 0;
     transition: left 0.5s ease;
 }
+
+    /* div move */
 .move-right{
-    left: 300px;
+    left: 550px;
+
 }
+
 .content #top_line i{
     font-family: cursive;
     font-size: 36px;
@@ -89,7 +93,7 @@ main{
     top: 24px;
     font-size: 15px;
 }
-.content button{
+.btn{
     position: relative;
     top: 50px;
     height: 50px;
@@ -100,6 +104,7 @@ main{
     font-size: 17px;
     border-radius: 23px;
     cursor: pointer;
+    transition: all 0.6s ease;
 }
 .content button:hover{
     transform: scale(1.1);
@@ -108,21 +113,137 @@ main{
     color: white;
 }
 
+/* change btn */
 
+.change_btn{
+    width: 50px;
+    margin-left: 150px;
+    transform: scale(1.2);
+    background: rgba(0, 0, 0, 0.5); /* transparent black */
+   
+}
+
+
+/* hide login namge registo div */
+.login_register{
+    height: 100%;
+    width: 400px;
+    backdrop-filter: blur(20px);
+    display: none;
+
+}
+.login_register #buttons_div{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.login_register #buttons_div button{
+    height: 40px;
+    width: 150px;
+    border: none;
+    border-radius: 20px;
+    margin: 0 4px 0 4px;
+    background: rgb(205, 234, 150);
+    cursor: pointer;
+    
+}
+
+/* register */
+
+.login_register #register{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+.login_register #register input{
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background: transparent;
+    font-size: 15px;
+}
+.login_register #register input::placeholder{
+    padding: 10px;
+}
+
+
+/* login */
+
+.login_register #login{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    display: none;
+}
+
+
+.login_register #login input{
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background: transparent;
+    font-size: 15px;
+}
+
+/* submint button */
+
+.login_register button{
+    height: 40px;
+    width: 130px;
+    border-radius: 20px;
+    background: rgba(10, 123, 216, 0.941);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    
+}
+
+.login_register button:active{
+    transform: scale(1.1);
+}
 /* mage stype */
 
 
 .img{
-
+    
     height: 400px;
     width: 400px;
     border-radius: 60px;
     box-shadow: 0px 0px 10px black;
-    background: rgb(154, 140, 241);
+    background: rgb(186, 177, 249);
     display: flex;
     justify-content: center;
     align-items: center;
+
+    
+    opacity: 1;
+    transform: scale(1);
+    transition: 
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
+/* image hide */
+.hide{
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+
+}
+
 .img #inner{
     height: 90%;
     width: 90%;
@@ -133,10 +254,13 @@ main{
 }
 
 @media (max-width:800px) {
-        .img{
-            display: none;
-        }
+    .img{
+        display: none;
+    }
 }
+
+
+
 
 /* footer  */
 footer{

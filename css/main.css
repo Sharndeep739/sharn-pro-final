@@ -1,0 +1,354 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #FFF1E1;
+}
+header{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #f6efe8;
+    box-shadow: 0px 0px 10px black;
+}
+.username{
+    height: 100%;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.username i {
+    font-size: 23px;
+    font-weight: 600;
+    margin-left: 30px;
+}
+.username pre {
+    font-size: 23px;
+    font-weight: 600;
+}
+.username div{
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.nav{
+    height: 100%;
+    width: 500px;
+    position: relative;
+    left: -70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.nav div{
+    height: 100%;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    
+}
+.nav div:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.cart{
+    height: 33px;
+    width: 35px;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    top: 13px;
+    right: 70px;
+    
+}
+.cart:hover{
+    cursor: pointer;
+
+}
+.cart pre{
+    font-size: 20px;
+    position: relative;
+    left: 33px;
+    top: -30px;
+   
+
+}
+
+/* //main content */
+
+.slide{
+    height: 470px;
+    width: 95%;
+    margin: 10px 10px 10px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.slide #slide1{
+    height: 95%;
+    width: 95%;
+    border-radius: 25px;
+}
+
+.slide #slide1 #img1{
+    
+    height: 430px;
+    width: 430px;
+    background-image: url("../image/main_landscap.png");
+    background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-top: 10px;
+}
+/* lemon */
+.slide #slide1 #img1 #lemon{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    top: 220px;
+    right: 100px;
+    z-index: -2;
+    background-image: url("../image/lemon.png");
+    background-size: contain;
+  background-repeat: no-repeat;
+}
+.slide #slide1 #img1 #cerrot{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    top: -160px;
+    right: 120px;
+    z-index: -2;
+    background-image: url("../image/cerrot.png");
+    background-size: contain;
+  background-repeat: no-repeat;
+}
+    /* blur bar */
+.slide #slide1 #img1 #blur_text{
+    border-radius: 10px;
+    height: 140px;
+    width: 270px;
+    position: relative;
+    top: -120px;
+    right: 200px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+#blur_text #text1,#text2{
+    height: 70px;
+    width: 100%;
+    /* border: 2px solid red; */
+}
+#blur_text i{
+    font-size: 27px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+#blur_text pre{
+    display: inline-block;
+    position: relative;
+    top: -14px;
+    left: 3px;
+    font-weight: 600;
+    font-size: 17px;
+    /* border: 2px solid green; */
+}
+#blur_text p{
+    font-size: 15px;
+    /* border: 2px solid blue; */
+    position: relative;
+    right: -49px;
+    top: -40px;
+}
+
+
+
+
+/* big text */
+.slide #slide1 #conter_slide1{
+    height: 250px;
+    width: 550px;
+    position: relative;
+    top: -390px;
+    margin-left: 40px;
+}
+
+.slide #slide1 #conter_slide1 pre,p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 70px;
+    display: inline-block;
+    
+}
+.slide #slide1 #conter_slide1 #red_text{
+    color: rgb(159, 30, 30);
+    margin: 0 5px 0 10px;
+}
+.slide #slide1 #conter_slide1 #yellow_text{
+    color: #F9A946;
+    margin: 0 5px 0 5px;
+
+}
+
+#discover_text{
+    position: relative;
+    top: -410px;
+    left: 50px;
+    display: inline;
+}
+#discover_btn{
+    height: 40px;
+    width: 160px;
+    border: none;
+    border-radius: 20px;
+    background-color: #a33230;
+    font-size: 17px;
+    color: white;
+    position: relative;
+    top: -360px;
+    left: -110px;
+    cursor: pointer;
+}
+#discover_btn:hover{
+    transform: scale(1.1);
+}
+/* three div */
+
+.threeDiv{
+    height: 220px;
+    width: 1100px;
+    position: relative;
+    left: 90px;
+    border-radius: 25px;
+    background-color: white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(100, 99, 99, 0.5);
+    
+}
+
+.threeDiv #box1,#box2,#box3{
+    height: 150px;
+    width: 120px;
+    border-radius: 10px;
+    margin: 40px 30px 0 30px;
+    color: white;
+}
+.threeDiv #box1{
+    background-color: #EB7B79;
+}
+.threeDiv #imgC{
+    height: 110px;
+    width: 110px;
+
+    background-image: url("../image/main_landscap.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0px 0px 5px black);
+    position: relative;
+    top: -50px;
+    left: 6px;
+}
+.threeDiv #text_p{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    top: -40px;
+    left: 10px;
+}
+.threeDiv #price{
+    position: relative;
+    font-size: 16px;
+    top: -37px;
+    left: 10px;
+}
+.threeDiv button{
+    height: 25px;
+    width: 80px;
+    position: relative;
+    font-size: 16px;
+    top: -33px;
+    left: 10px;
+    border: none;
+    border-radius: 10px;
+}
+.threeDiv #box2{
+    background-color: #F17D35;
+}
+.threeDiv #box3{
+    background-color: #5FC943;
+}
+
+.what_you_get{
+    height: 360px;
+    width: 500px;
+    z-index: 3;
+    position: absolute;
+    top: 130px;
+    left: 390px;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* animation logic */
+    opacity: 0;
+    transform: scale(1);
+    pointer-events: none;
+
+    transition: 
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* active state */
+.what_you_get.active{
+    opacity: 1;
+    transform: scale(1.1);
+    pointer-events: auto;
+}
+
+
+
+.what_you_get pre{
+    height: 90%;
+    width: 97%;
+    position: relative;
+    top: -20px;
+}
+.what_you_get #Close_btn{
+    height: 30px;
+    width: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border: none;
+    font-size: 20px;
+    position:  relative;
+    left: 420px;
+    top: -25px;
+    cursor: pointer;
+
+}

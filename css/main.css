@@ -352,3 +352,55 @@ header{
     cursor: pointer;
 
 }
+
+/* product list */
+
+    h1{
+        font-size: 30px;
+        margin: 50px 0 -60px 30px;
+        
+    }
+.pro_list{
+    border: 2px solid red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    top: 60px;
+}
+.pro_list #item1,#item2,#item3,#item4,#item5,#item6,#item7,#item8,#item9{
+    height: 360px;
+    width: 350px;
+    border: 2px solid black;
+    margin: 30px 0 0 0;
+}
+.pro_list div #imgs{
+    height: 62%;
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 22px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.pro_list #imgs img{
+    height: 100%;
+    width: 100%;
+}
+.pro_list #text{
+    height: 110px;
+    width: 98%;
+    border: 2px solid pink;
+    position: relative;
+    top: 20px;
+}
+.pro_list h3{
+    font-size: 25px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+
+

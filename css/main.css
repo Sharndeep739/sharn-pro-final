@@ -54,7 +54,13 @@ header{
     display: flex;
     align-items: center;
     font-weight: 600;
-    
+     color: black;
+}
+.nav a{
+    text-decoration: none;
+}
+.nav #home{
+    color: green;
 }
 .nav div:hover{
     cursor: pointer;
@@ -299,16 +305,19 @@ header{
     background-color: #5FC943;
 }
 
+
 .what_you_get{
-    height: 360px;
-    width: 500px;
+    height: 500px;
+    width: 800px;
     z-index: 3;
     position: absolute;
-    top: 130px;
-    left: 390px;
+    top: 60px;
+    left: 200px;
 
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(5px);
+    background-image: url("../image/what_you_get.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(8px);
 
     display: flex;
     justify-content: center;
@@ -322,6 +331,7 @@ header{
     transition: 
         opacity 0.35s ease,
         transform 0.35s ease;
+        border: 1px solid rgb(0, 0, 0);
 }
 
 /* active state */
@@ -347,7 +357,7 @@ header{
     border: none;
     font-size: 20px;
     position:  relative;
-    left: 420px;
+    left: 720px;
     top: -25px;
     cursor: pointer;
 
@@ -357,50 +367,279 @@ header{
 
     h1{
         font-size: 30px;
-        margin: 50px 0 -60px 30px;
+        margin: 0px 0 -60px 30px;
+        position: relative;
+        top: 30px;
         
     }
 .pro_list{
-    border: 2px solid red;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     position: relative;
     top: 60px;
+    position: relative;
+    top: 90px;
+        
+    
 }
-.pro_list #item1,#item2,#item3,#item4,#item5,#item6,#item7,#item8,#item9{
+.pro_list .item{
     height: 360px;
     width: 350px;
-    border: 2px solid black;
-    margin: 30px 0 0 0;
+    margin: 30px 0 20px 0;
+    transition: all 0.3s ease;
 }
+
 .pro_list div #imgs{
-    height: 62%;
-    width: 85%;
+    height: 73%;
+    width: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    left: 22px;
+    /* left: 22px; */
     border-radius: 20px;
     overflow: hidden;
+    box-shadow: inset 0px -40px 50px black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
-.pro_list #imgs img{
-    height: 100%;
-    width: 100%;
+        /* //images  */
+.pro_list .imgs1{
+background-image: url("../image/indian/Paneer\ Butter\ Masala\ Recipe\ Ever!.jpg");  
 }
+.pro_list .imgs2{
+    background-image: url("../image/japneses/Okonomiyaki\ .jpg");
+    background-position-y: -50px;
+}
+.pro_list .imgs3{
+    background-image: url("../image/korean/kimchi.jpg");
+    background-position-y: -50px;
+}
+.pro_list .imgs4{
+    background-image: url("../image/indian/pizza.jpg");
+    background-position-y: -50px;
+}
+.pro_list .imgs5{
+    background-image: url("../image/indian/Subway\ Sandwiches\,\ According\ to\ Dietitians.jpg");
+    background-position-x: -20px;
+}
+.pro_list .imgs6{
+    background-image: url("../image/japneses/Takoyaki.jpg");
+    background-position-y: -60px;
+    
+}
+.pro_list .imgs7{
+    background-image: url("../image/japneses/tonkatsu.jpg");
+}
+.pro_list .imgs8{
+    background-image: url("../image/korean/Kimbap.jpg");
+    background-position-y: -60px;   
+}
+.pro_list .imgs9{
+    background-image: url("../image/korean/𝗕𝗶𝗯𝗶𝗺𝗯𝗮𝗽\ \(𝗞𝗼𝗿𝗲𝗮𝗻\ 𝗠𝗶𝘅𝗲𝗱\ 𝗥𝗶𝗰𝗲\ 𝗕𝗼𝘄𝗹\).jpg");
+    background-position-y: -20px;   
+   
+}
+
 .pro_list #text{
-    height: 110px;
-    width: 98%;
-    border: 2px solid pink;
+    height: 120px;
+    width: 85%;
     position: relative;
-    top: 20px;
+    top: -37px;
+    left: 10px;
+}
+.pro_list h2{
+    color: white;
 }
 .pro_list h3{
-    font-size: 25px;
+    font-size: 20px;
+    margin-top: 20px;
     margin-bottom: 5px;
     margin-left: 3px;
 }
+.pro_list i{
+    color: #24a500;
+}
+        /* cart butno */
+.to_cart_btn{
+    height: 40px;
+    width: 120px;
+    position: relative;
+    top: -30px;
+    border-radius: 20px;
+    border: none;
+    background-color: #5FC943;
+    font-size: 16px;
+}
+
+.to_cart_btn:hover{
+    cursor: pointer;
+}
+.to_cart_btn:active{
+    transform: scale(0.9);
+    background-color: #24a500;
+}
 
 
+/* footer */
+footer{
+    height: 350px;
+    width: 100%;
+    position: relative;
+    top: 130px;
+    background-color: rgb(5, 5, 5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #f6efe8;
+}
+
+footer #box{
+    height: 100%;
+    width: 200px;
+    display: grid;
+    grid-row: 1;
+}
+footer h3{
+
+    height: 20px;
+    font-weight: 300;
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+footer pre{
+    height: 40px;
+    width: 96%;
+    text-align: center;
+
+
+}
+footer #social_link{
+    height: 200px;
+    width: 90%;
+}
+footer h2{
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+}
+
+footer i{
+    font-size: 28px;
+    margin :10px 0 0 20px;
+    color: white;
+}
+
+
+/* medial qury */
+@media (max-width: 1024px){
+
+    .nav{
+        width: 400px;
+        left: 0;
+    }
+
+    .threeDiv{
+        width: 95%;
+        left: 0;
+    }
+
+    .what_you_get{
+        width: 90%;
+        left: 5%;
+    }
+
+    .slide{
+        height: auto;
+    }
+}
+
+/* Tablets & mobiles */
+@media (max-width: 768px){
+
+    header{
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .nav{
+        width: 100%;
+        justify-content: space-around;
+        left: 0;
+    }
+
+    .cart{
+        right: 20px;
+    }
+
+    .slide{
+        margin: 10px;
+    }
+
+    .slide #slide1 #img1{
+        margin: auto;
+    }
+
+    .slide #slide1 #conter_slide1{
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+        top: -300px;
+    }
+
+    #discover_text,
+    #discover_btn{
+        left: 0;
+        text-align: center;
+    }
+
+    .threeDiv{
+        flex-wrap: wrap;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .what_you_get{
+        height: auto;
+        top: 100px;
+    }
+
+    footer{
+        flex-wrap: wrap;
+        height: auto;
+        padding: 20px 0;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px){
+
+    .username{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav div{
+        width: auto;
+        font-size: 14px;
+    }
+
+    .slide #slide1 #conter_slide1 pre,
+    .slide #slide1 #conter_slide1 p{
+        font-size: 40px;
+        line-height: 45px;
+    }
+
+    .pro_list .item{
+        width: 90%;
+    }
+
+    footer #box{
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -168,6 +168,9 @@ main{
     border: 1px solid black;
     
 }
+.login_register #buttons_div #register_b{
+    background-color: rgba(10, 123, 216, 0.941);
+}
 
 /* register */
 

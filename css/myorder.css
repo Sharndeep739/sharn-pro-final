@@ -1,0 +1,90 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #FFF1E1;
+}
+header{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #f6efe8;
+    box-shadow: 0px 0px 10px black;
+}
+.username{
+    height: 100%;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.username i {
+    font-size: 23px;
+    font-weight: 600;
+    margin-left: 30px;
+}
+.username pre {
+    font-size: 23px;
+    font-weight: 600;
+}
+.username div{
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.nav{
+    height: 100%;
+    width: 500px;
+    position: relative;
+    left: -70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.nav div{
+    height: 100%;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+     color: black;
+}
+.nav a{
+    text-decoration: none;
+}
+.nav #myoder{
+    color: green;
+}
+.nav div:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.cart{
+    height: 33px;
+    width: 35px;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    top: 13px;
+    right: 70px;
+    
+}
+.cart:hover{
+    cursor: pointer;
+
+}
+.cart pre{
+    font-size: 20px;
+    position: relative;
+    left: 33px;
+    top: -30px;
+   
+
+}

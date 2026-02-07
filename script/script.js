@@ -39,8 +39,15 @@ function moveDiv(){
 function registerr(){
     document.getElementById("register").style.display="flex";
     document.getElementById("login").style.display="none";
+    document.getElementById("login_b").style.backgroundColor="rgba(255, 255, 255, 0.5)";
+    document.getElementById("register_b").style.backgroundColor="rgba(10, 123, 216, 0.941)";
+
+    
 }
 function loginn(){
     document.getElementById("login").style.display="flex";
     document.getElementById("register").style.display="none";
+    document.getElementById("register_b").style.backgroundColor="rgba(255, 255, 255, 0.5)";
+    document.getElementById("login_b").style.backgroundColor="rgba(10, 123, 216, 0.941)";
 }
+

@@ -1,0 +1,413 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #FFF1E1;;
+}
+header{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #f6efe8;
+    box-shadow: 0px 0px 10px black;
+}
+.username{
+    height: 100%;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.username i {
+    font-size: 23px;
+    font-weight: 600;
+    margin-left: 30px;
+}
+.username pre {
+    font-size: 23px;
+    font-weight: 600;
+}
+.username div{
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.nav{
+    height: 100%;
+    width: 500px;
+    position: relative;
+    left: -70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.nav div{
+    height: 100%;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: black;
+}
+.nav a{
+    text-decoration: none;
+}
+.nav #Store{
+    color: green;
+}
+.nav div:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.cart{
+    height: 33px;
+    width: 35px;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    top: 13px;
+    right: 70px;
+    
+}
+.cart:hover{
+    cursor: pointer;
+
+}
+.cart pre{
+    font-size: 20px;
+    position: relative;
+    left: 33px;
+    top: -30px;
+   
+
+}
+
+/* //main  */
+
+.filter{
+    height: 100px;
+
+}
+
+
+.food_grid{
+    width: 97%;
+    border: 2px solid red;
+    position: relative;
+    left: 20px;
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+}
+.food_grid #food_cart{
+    height: 340px;
+    width: 250px;
+    border: 2px solid green;
+}
+
+/* img box */
+.food_grid #img_box{
+    height: 200px;
+    width: 100%;
+    border: 2px solid pink;
+    box-shadow: inset 0px -30px 30px black;
+    border-radius: 20px;
+}
+
+.food_grid .img1{
+    background-image: url("../image/indian/crack\ burgers.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.food_grid .img2{
+    background-image: url("../image/japneses/Amazing\ Miso\ Soup_\ A\ Delicious\ Comforting\ Classic.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.food_grid .img3{
+    background-image: url("../image/korean/Bulgogi\ \(Spicy\ Bulgogi\).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -60px;
+}
+.food_grid .img4{
+    background-image: url("../image/indian/Crispy\ Aloo\ Samosa.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.food_grid .img5{
+    background-image: url("../image/japneses/Egg\ Salad\ Sandwich.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.food_grid .img6{
+    background-image: url("../image/korean/Japchae.jpg");
+    background-position-y: -30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.food_grid .img7{
+    background-image: url("../image/indian/dosa\ on.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img8{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img9{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img10{
+    background-image: url("../image/indian/Gulab\ Jamun!\ Indian\ Dessert\ Recipes\ _\ Sweets\ _\ Desserts.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img11{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img12{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img13{
+    background-image: url("../image/indian/Paneer\ Butter\ Masala\ Recipe\ Ever!.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img14{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img15{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img16{
+    background-image: url("../image/indian/Pav\ Bhaji\ Food.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img17{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img18{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img19{
+    background-image: url("../image/indian/pizza.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img20{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img21{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.food_grid .img22{
+    background-image: url("../image/indian/Salted\ Lassi\ -\ Indian\ Style\ Yogurt\ based\ Summer\ Beverage\ Recipe\ -\ Step\ by\ Step.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.food_grid .img23{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img24{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img25{
+    background-image: url("../image/indian/Sambar\ Powder\ Recipe.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img26{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img27{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img28{
+    background-image: url("../image/indian/Subway\ Sandwiches\,\ According\ to\ Dietitians.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img29{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img30{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img31{
+    background-image: url("../image/indian/Yummy\ Rawa\ Idli\ from\ Diksha\'s\ Cafe.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img32{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img33{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img34{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img35{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img36{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img37{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img38{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img39{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}.food_grid .img40{
+    background-image: url("../image");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/* item detial box */
+.food_grid #item_detial{
+    border: 2px solid slateblue;
+    width: 96%;
+    height: 172px;
+    position: relative;
+    top: -41px;
+    left: 6px;
+}
+
+/* item price */
+.food_grid #item_detial #price{
+    font-size: 25px;
+    font-weight: 600;
+    height: 40px;
+    width: 100%;
+    border: 2px solid gold;
+    display: flex;
+    align-items: center;  
+    color: white;  
+}
+
+/* item name */
+.food_grid #item_detial #item_name{
+    height: 30px;
+    border: 2px solid blue;
+    font-size: 22px;
+    font-weight: 600;
+}
+.food_grid #item_detial #item{
+    height: 20px;
+}
+.food_grid #item_detial #detail{
+    height: 25px;
+    border: 2px solid blueviolet;
+}
+
+/* cart buttno */
+.food_grid #item_detial .to_cart{
+    height: 37px;
+    width: 140px;
+    background-color: #5FC943;
+    border-radius: 20px;
+    border: none;
+    font-size: 15px;
+}
+.food_grid #item_detial .to_cart:hover{
+    cursor: pointer;
+}
+.food_grid #item_detial .to_cart:active{
+    transform: scale(0.9);
+    
+}

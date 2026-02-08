@@ -99,24 +99,22 @@ header{
 
 .food_grid{
     width: 97%;
-    border: 2px solid red;
     position: relative;
     left: 20px;
     display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 60px;
+  row-gap: 10px;
 }
 .food_grid #food_cart{
     height: 340px;
     width: 250px;
-    border: 2px solid green;
 }
 
 /* img box */
 .food_grid #img_box{
     height: 200px;
     width: 100%;
-    border: 2px solid pink;
     box-shadow: inset 0px -30px 30px black;
     border-radius: 20px;
 }
@@ -161,14 +159,14 @@ header{
 }
 
 .food_grid .img8{
-    background-image: url("../image");
+    background-image: url("../image/korean/Kimbap.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .food_grid .img9{
-    background-image: url("../image");
+    background-image: url("../image/japneses/Japanese\ Curry\ on\ Rice.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -182,14 +180,14 @@ header{
 }
 
 .food_grid .img11{
-    background-image: url("../image");
+    background-image: url("../image/korean/kimchi.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .food_grid .img12{
-    background-image: url("../image");
+    background-image: url("../image/japneses/melonpan.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -203,14 +201,14 @@ header{
 }
 
 .food_grid .img14{
-    background-image: url("../image");
+    background-image: url("../image/korean/Mandu\ with\ Sweet\ Soy\ Drizzle.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .food_grid .img15{
-    background-image: url("../image");
+    background-image: url("../image/japneses/MOCHI\ 3D.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -224,14 +222,14 @@ header{
 }
 
 .food_grid .img17{
-    background-image: url("../image");
+    background-image: url("../image/korean/Ramen\ Noodles\ \(Vegan\ Recipe\).jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .food_grid .img18{
-    background-image: url("../image");
+    background-image: url("../image/japneses/Okonomiyaki\ .jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -245,14 +243,14 @@ header{
 }
 
 .food_grid .img20{
-    background-image: url("../image");
+    background-image: url("../image/korean/Soondubu\ Jjigae.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .food_grid .img21{
-    background-image: url("../image");
+    background-image: url("../image/japneses/Onigiri.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -265,12 +263,12 @@ header{
     background-size: cover;
 }
 .food_grid .img23{
-    background-image: url("../image");
+    background-image: url("../image/korean/Tteokbokki\ with\ Boiled\ Eggs.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
 }.food_grid .img24{
-    background-image: url("../image");
+    background-image: url("../image/japneses/Sushi\ dinner.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -280,12 +278,12 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
 }.food_grid .img26{
-    background-image: url("../image");
+    background-image: url("../image/korean/Tteokguk\ \(Korean\ Rice\ Cake\ Soup\)\ -\ Beyond\ Kimchee.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
 }.food_grid .img27{
-    background-image: url("../image");
+    background-image: url("../image/japneses/Takoyaki.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -295,12 +293,12 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
 }.food_grid .img29{
-    background-image: url("../image");
+    background-image: url("../image/korean/𝗕𝗶𝗯𝗶𝗺𝗯𝗮𝗽\ \(𝗞𝗼𝗿𝗲𝗮𝗻\ 𝗠𝗶𝘅𝗲𝗱\ 𝗥𝗶𝗰𝗲\ 𝗕𝗼𝘄𝗹\).jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
 }.food_grid .img30{
-    background-image: url("../image");
+    background-image: url("../image/japneses/tonkatsu.jpg");
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -360,21 +358,19 @@ header{
 
 /* item detial box */
 .food_grid #item_detial{
-    border: 2px solid slateblue;
     width: 96%;
     height: 172px;
     position: relative;
-    top: -41px;
-    left: 6px;
+    top: -38px;
+    left: 7px;
 }
 
 /* item price */
 .food_grid #item_detial #price{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 600;
     height: 40px;
     width: 100%;
-    border: 2px solid gold;
     display: flex;
     align-items: center;  
     color: white;  
@@ -383,16 +379,16 @@ header{
 /* item name */
 .food_grid #item_detial #item_name{
     height: 30px;
-    border: 2px solid blue;
     font-size: 22px;
     font-weight: 600;
 }
 .food_grid #item_detial #item{
     height: 20px;
+    position: relative;
+    top: -4px;
 }
 .food_grid #item_detial #detail{
     height: 25px;
-    border: 2px solid blueviolet;
 }
 
 /* cart buttno */

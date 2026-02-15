@@ -45,21 +45,21 @@
                 <button  id="register_b" onclick="registerr()">Register</button>
                 <button id="login_b" onclick="loginn()">Login</button>
             </div>
-        
-            <div id="register" >
-                <input type="text" placeholder="Enter name" required>
-                <input type="password" placeholder="Set password" required>
-                <input type="password" placeholder="Confirm password" required>
-                <input type="number" placeholder="Phone Number" required>
-                <input type="text" placeholder="Email" required>
+            
+            <form id="register"  >
+                <input type="text" name="name" placeholder="Enter name" required>
+                <input type="password" name="password" placeholder="Set password" required>
+                <input type="password" name="confirm_password" placeholder="Confirm password" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="number" name="phone" placeholder="Phone Number" required>
+                <button type="submit">Submit</button>
                 
-                <button name="submit" onclick="go_main()">Submit</button>
-            </div>
-            <div id="login">
-                <input type="text" placeholder="User name">
-                <input type="password" placeholder="password">
-                <button name="submit">Submit</button>
-            </div>
+            </form>
+            <form id="login" >
+                <input type="text" name="name" placeholder="User name">
+                <input type="password" name="password" placeholder="password">
+                <button type="submit" >Submit</button>
+            </form>
          </div>
         
 
@@ -96,6 +96,6 @@
         <input type="email" name="email" required><br><br>
         <input type="submit" value="Submit">
     </form> -->
-    <script src="script/script.js"></script>
+    <script src="script/script.js" ></script>
 </body>
 </html>

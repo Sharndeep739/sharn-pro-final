@@ -65,27 +65,26 @@ header{
     text-decoration: underline;
 }
 .cart{
-    height: 33px;
-    width: 35px;
-    font-size: 30px;
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
     font-weight: 500;
     position: relative;
     top: 13px;
-    right: 70px;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(211, 211, 211);
     
 }
+
 .cart a{
+    color: rgb(0, 0, 0);
     color: green;
 }
 .cart:hover{
     cursor: pointer;
-
-}
-.cart pre{
-    font-size: 20px;
-    position: relative;
-    left: 33px;
-    top: -30px;
-   
 
 }

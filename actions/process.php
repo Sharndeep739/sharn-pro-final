@@ -1,24 +1,29 @@
 <?php
-// Check if form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form values
-    $name = $_POST['name'];
-    $email = $_POST['email'];
+session_start();
+$conn = new mysqli("localhost","root","BTSsharndeep267","test");
 
-    // Simple output
-    echo "<h2>Form Submitted Successfully!</h2>";
-    echo "Name: " . htmlspecialchars($name) . "<br>";
-    echo "Email: " . htmlspecialchars($email) . "<br>";
+$name = $_POST['name'];
+$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+$phone = $_POST['phone'];
+$email = $_POST['email'];
 
-    // Here you can also connect to MySQL to save the data
-    $conn = new mysqli("localhost", "root", "BTSsharndeep267", "test");
-    if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
+$stmt = $conn->prepare("INSERT INTO users (name,password,phone,email) VALUES (?,?,?,?)");
+$stmt->bind_param("ssss",$name,$password,$phone,$email);
 
-    $sql = "INSERT INTO user (name, email) VALUES ('$name', '$email')";
-    $conn->query($sql);
-    $conn->close();
+
+if($stmt->execute()){
+ $_SESSION['username'] = $name;
+    $_SESSION['user_id'] = $conn->insert_id;
+
+    echo "<script>
+        alert('Registration Successful 🎉');
+        window.location.href='main.php';
+    </script>";
 
 } else {
-    echo "Please submit the form first.";
+    echo "Registration Failed";
 }
+
+$conn->query($sql);
+
 ?>

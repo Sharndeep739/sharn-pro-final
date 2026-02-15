@@ -1,46 +1,54 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+    header("Location: index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-</head>
-<body>
-    <header>
-        <div class="username">
-            <i class="fa-solid fa-pizza-slice"></i>
-            <pre> Hi,</pre>
-            <div id="nameU">sharn</div>
-        </div>
-        <div class="nav">
-             <a href="main.html"><div id="home">Home</div></a>
-            <a href="store.html"><div id="Store">Store</div></a>
-            <a href="address.html"><div id="Address">Address</div></a>
-            <a href="myorder.html"><div id="myoder">My Order</div></a>
-        </div>
-        <div class="cart">
-                            <a href="carts.html"><i class="fa-solid fa-cart-shopping"></i></a>
-
-            <pre>Cart
-            </pre>
-        </div>
-    </header>
-
-    <main>
-        <div class="slide">
-            <div id="slide1">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        
+    </head>
+    <body>
+        <header>
+            <div class="username">
+                <i class="fa-solid fa-pizza-slice"></i>
+                <pre> Hi,</pre>
+                <div id="nameU">
+                    <?php echo htmlspecialchars($_SESSION['username']); ?>
+                </div>
+            </div>
+            <div class="nav">
+                <a href="main.php"><div id="home">Home</div></a>
+                <a href="store.html"><div id="Store">Store</div></a>
+                <a href="address.html"><div id="Address">Address</div></a>
+                <a href="myorder.html"><div id="myoder">My Order</div></a>
+            </div>
+            <div class="cart">
+                <a href="carts.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                
+            </div>
+        </header>
+        
+        <main>
+            <div class="slide">
+                <div id="slide1">
                     <div id="img1">
                         <div id="lemon"></div>
                         <div id="cerrot"></div>
-
+                        
                         <div id="blur_text">
                             <div id="text1">
-
+                                
                                 <!-- car -->
-
+                                
                                 <i class="fa-solid fa-car-side"></i>
                                 <pre>Fast Delivery</pre>
                                 <p>Lightning-fast delivery service.</p>
@@ -48,15 +56,15 @@
                             <div id="text2">
                                 
                                 <!-- clock -->
-                            
+                                
                                 <i class="fa-regular fa-clock"></i>
                                 <pre>Within Time</pre>
                                 <p>Right on time, every order.</p>
-
+                                
                             </div>
                         </div>
                     </div>
-
+                    
                     <div id="conter_slide1">
                         <p>Healthy</p>
                         <p id="red_text">Eating is </p>
@@ -65,129 +73,129 @@
                         <br>
                         <p>of Lifestyle</p>
                     </div>
-
+                    
                     <div id="discover_text">
                         Discover food beyond taste <br>
                         made with love daily
                     </div>
                     <button id="discover_btn" onclick="what_you_gets()">What You Get</button>
-                
+                    
+                </div>
             </div>
-        </div>
 
-        <!-- three div -->
-
-        <div class="threeDiv">
-            <div id="box1">
-                <div id="imgC"></div>
-                <div id="text_p">Under</div>
-                <div id="price">₹200/-</div>
-                <button>Indian</button>
+            <!-- three div -->
+            
+            <div class="threeDiv">
+                <div id="box1">
+                    <div id="imgC"></div>
+                    <div id="text_p">Under</div>
+                    <div id="price">₹200/-</div>
+                    <button>Indian</button>
+                </div>
+                <div id="box2">
+                    <div id="imgC"></div>
+                    <div id="text_p">Under</div>
+                    <div id="price">¥680/  (₹400)</div>
+                    <button>Japanese</button>
+                </div>
+                <div id="box3">
+                    <div id="imgC"></div>
+                    <div id="text_p">Under</div>
+                    <div id="price">₩7153/ (₹450)</div>
+                    <button>Korean</button>
+                    
+                </div>
             </div>
-            <div id="box2">
-                <div id="imgC"></div>
-                <div id="text_p">Under</div>
-                <div id="price">¥680/  (₹400)</div>
-                <button>Japanese</button>
+            
+            <div class="what_you_get" id="what_you_gets">
+                <pre>
+                    <button id="Close_btn" onclick="what_you_gets()">X</button>
+                    
+                </pre>
             </div>
-            <div id="box3">
-                <div id="imgC"></div>
-                <div id="text_p">Under</div>
-                <div id="price">₩7153/ (₹450)</div>
-                <button>Korean</button>
-
-            </div>
-        </div>
-
-        <div class="what_you_get" id="what_you_gets">
-            <pre>
-               <button id="Close_btn" onclick="what_you_gets()">X</button>
-
-            </pre>
-        </div>
-           <h1>Order Popular Foods</h1>
-           <!-- product list -->
-
-           <div class="pro_list">
-            <div class="item">
-                <div id="imgs" class="imgs1"></div>
-                <div id="text">
-                    <h2>₹200/- with 60% off</h2>
-                    <h3>Paneer Butter Masala</h3>
-                    <pre><i class="fa-solid fa-star"></i> 4.6 · 30–40 mins</pre>
-                    <pre>North Indian, Punjabi, Main Course
-                    </pre>
+            <h1>Order Popular Foods</h1>
+            <!-- product list -->
+            
+            <div class="pro_list">
+                <div class="item">
+                    <div id="imgs" class="imgs1"></div>
+                    <div id="text">
+                        <h2>₹200/- with 60% off</h2>
+                        <h3>Paneer Butter Masala</h3>
+                        <pre><i class="fa-solid fa-star"></i> 4.6 · 30–40 mins</pre>
+                        <pre>North Indian, Punjabi, Main Course
+                        </pre>
+                    </div>
+                    <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
                 </div>
-                <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
-            </div>
-            <div class="item">
-                <div id="imgs" class="imgs2">
+                <div class="item">
+                    <div id="imgs" class="imgs2">
+                    </div>
+                    <div id="text">
+                        <h2>₹220/- with 50% off</h2>
+                        <h3>Okonomiyaki</h3>
+                        <pre><i class="fa-solid fa-star"></i> 4.5 · 25–35 mins</pre>
+                        <pre>Japanese, Street Food, Savory Pancake
+                        </pre>
+                    </div>
+                    <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                    
                 </div>
-                <div id="text">
-                    <h2>₹220/- with 50% off</h2>
-                    <h3>Okonomiyaki</h3>
-                    <pre><i class="fa-solid fa-star"></i> 4.5 · 25–35 mins</pre>
-                    <pre>Japanese, Street Food, Savory Pancake
-                    </pre>
+                <div class="item">
+                    <div id="imgs" class="imgs3">
+                    </div>
+                    <div id="text">
+                        <h2>₹170/- with 60% OFF</h2>
+                        <h3>Kimchi</h3>
+                        <pre><i class="fa-solid fa-star"></i> 4.4 · 20–30 mins</pre>
+                        <pre>Korean, Fermented, Side Dish
+                        </pre>
+                    </div>
+                    <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                    
                 </div>
-                <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
-                
-            </div>
-            <div class="item">
-                <div id="imgs" class="imgs3">
+                <div class="item">
+                    <div id="imgs" class="imgs4">
+                    </div>
+                    <div id="text">
+                        <h2>₹250/- with 40% OFF</h2>
+                        <h3>Pizza</h3>
+                        <pre><i class="fa-solid fa-star"></i> 4.6 · 20–30 mins</pre>
+                        <pre>Italian, Fast Food, Baked
+                        </pre>
+                    </div>
+                    <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                    
+                    
                 </div>
-                <div id="text">
-                    <h2>₹170/- with 60% OFF</h2>
-                    <h3>Kimchi</h3>
-                    <pre><i class="fa-solid fa-star"></i> 4.4 · 20–30 mins</pre>
-                    <pre>Korean, Fermented, Side Dish
-                    </pre>
+                <div class="item">
+                    <div id="imgs" class="imgs5">
+                    </div>
+                    <div id="text">
+                        <h2>₹180/- with 40% OFF</h2>
+                        <h3>Subway Sandwiches</h3>
+                        <pre><i class="fa-solid fa-star"></i> 4.5 · 15–25 mins</pre>
+                        <pre>Sandwiches, Fast Food, Healthy
+                        </pre>
+                    </div>
+                    <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                    
+                    
                 </div>
-                <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
-                
-            </div>
-            <div class="item">
-                <div id="imgs" class="imgs4">
+                <div class="item">
+                    <div id="imgs" class="imgs6">
+                    </div>
+                    <div id="text">
+                        <h2>₹260/- with 40% OFF</h2>
+                        <h3>Takoyaki</h3>
+                        <pre><i class="fa-solid fa-star"></i> 4.6 · 20–30 mins</pre>
+                        <pre>Japanese, Street Food, Seafood
+                        </pre>
+                    </div>
+                    <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                    
+                    
                 </div>
-                <div id="text">
-                    <h2>₹250/- with 40% OFF</h2>
-                    <h3>Pizza</h3>
-                    <pre><i class="fa-solid fa-star"></i> 4.6 · 20–30 mins</pre>
-                    <pre>Italian, Fast Food, Baked
-                    </pre>
-                </div>
-                <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
-
-                
-            </div>
-            <div class="item">
-                <div id="imgs" class="imgs5">
-                </div>
-                <div id="text">
-                    <h2>₹180/- with 40% OFF</h2>
-                    <h3>Subway Sandwiches</h3>
-                    <pre><i class="fa-solid fa-star"></i> 4.5 · 15–25 mins</pre>
-                    <pre>Sandwiches, Fast Food, Healthy
-                    </pre>
-                </div>
-                <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
-
-                
-            </div>
-            <div class="item">
-                <div id="imgs" class="imgs6">
-                </div>
-                <div id="text">
-                    <h2>₹260/- with 40% OFF</h2>
-                    <h3>Takoyaki</h3>
-                    <pre><i class="fa-solid fa-star"></i> 4.6 · 20–30 mins</pre>
-                    <pre>Japanese, Street Food, Seafood
-                    </pre>
-                </div>
-                <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
-
-                
-            </div>
             <div class="item">
                 <div id="imgs" class="imgs7">
                 </div>
@@ -199,7 +207,7 @@
                     </pre>
                 </div>
                 <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
-
+                
                 
             </div>
             <div class="item">
@@ -213,7 +221,7 @@
                     </pre>
                 </div>
                 <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
-
+                
                 
             </div>
             <div class="item">
@@ -227,13 +235,13 @@
                     </pre>
                 </div>
                 <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
-
-
+                
+                
             </div>
             
-           </div>
+        </div>
     </main>
-
+    
     <footer>
         <div id="box">
             <h3>Contact us:</h3>
@@ -260,7 +268,7 @@
                 <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
             </div>
-
+            
         </div>
         
     </footer>

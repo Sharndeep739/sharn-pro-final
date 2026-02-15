@@ -1,3 +1,12 @@
+
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+    header("Location: index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,27 +22,38 @@
         <div class="username">
             <i class="fa-solid fa-pizza-slice"></i>
             <pre> Hi,</pre>
-            <div id="nameU">sharn</div>
+            <div id="nameU">
+                    <?php echo htmlspecialchars($_SESSION['username']); ?>
+
+            </div>
         </div>
         <div class="nav">
-            <a href="main.html"><div id="home">Home</div></a>
-            <a href="store.html"><div id="Store">Store</div></a>
-            <a href="address.html"><div id="Address">Address</div></a>
-            <a href="myorder.html"><div id="myoder">My Order</div></a>
-        </div>
+                <input type="search" id="searchBar" placeholder="search">
+                <a href="main.php"><div id="home">Home</div></a>
+                <a href="store.php"><div id="Store">Store</div></a>
+                <a href="myorder.php"><div id="myoder">My Order</div></a>
+            </div>
         <div class="cart">
-            <a href="carts.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="carts.php"><i class="fa-solid fa-cart-shopping"></i></a>
 
         </div>
     </header>
     <main>
         <div class="filter">
+            <label id="lable_price">Min Price: </label>
+            <input type="number" id="minPrice" placeholder="0">
+
+            <label id="lable_price">Max Price: </label>
+            <input type="number" id="maxPrice" placeholder="500">
+
+            <button id="filterBtn">Apply Filter</button>
 
         </div>
 
 
         <div class="food_grid">
-            <div class="food_cart1" id="food_cart">
+            <a href="index.php">
+            <div class="food_cart" data-price="120" id="Burger">
                 <!-- img -->
 
                 <div id="img_box" class="img1"></div>
@@ -53,7 +73,8 @@
                     <button class="to_cart">Add To Cart</button>
                 </div>
             </div>
-            <div class="food_cart2" id="food_cart">
+            </a>
+            <div class="food_cart" data-price="150" id="Miso Soup">
 
                 <div id="img_box" class="img2"></div>
                 <!-- detail -->
@@ -73,7 +94,7 @@
                 </div>
 
             </div>
-            <div class="food_cart3" id="food_cart">
+            <div class="food_cart" data-price="280" id="Bulgogi">
                 <div id="img_box" class="img3"></div>
                 <!-- detail -->
 
@@ -92,7 +113,7 @@
                 </div>
 
             </div>
-            <div class="food_cart4" id="food_cart">
+            <div class="food_cart" data-price="140" id="Samosa">
                 <div id="img_box" class="img4"></div>
                 <!-- detail -->
 
@@ -111,7 +132,7 @@
                 </div>
 
             </div>
-            <div class="food_cart5" id="food_cart">
+            <div class="food_cart" data-price="90" id="Egg Sandwich">
                 <div id="img_box" class="img5"></div>
                 <!-- detail -->
 
@@ -130,7 +151,7 @@
                 </div>
 
             </div>
-            <div class="food_cart6" id="food_cart">
+            <div class="food_cart" data-price="260" id="Japchae">
                 <div id="img_box" class="img6"></div>
                 <!-- detail -->
 
@@ -149,7 +170,7 @@
                 </div>
 
             </div>
-            <div class="food_cart7" id="food_cart">
+            <div class="food_cart" data-price="80" id="Dosa">
                 <div id="img_box" class="img7"></div>
                 <!-- detail -->
 
@@ -168,7 +189,7 @@
                 </div>
 
             </div>
-            <div class="food_cart8" id="food_cart">
+            <div class="food_cart" data-price="220" id="Kimbap">
                 <div id="img_box" class="img8"></div>
                 <!-- detail -->
 
@@ -187,7 +208,7 @@
                 </div>
 
             </div>
-            <div class="food_cart9" id="food_cart">
+            <div class="food_cart" data-price="250" id="Japnese Curry">
                 <div id="img_box" class="img9"></div>
                 <!-- detail -->
 
@@ -206,7 +227,7 @@
                 </div>
 
             </div>
-            <div class="food_cart10" id="food_cart">
+            <div class="food_cart" data-price="90" id="Gulab Jaman">
                 <div id="img_box" class="img10"></div>
                 <!-- detail -->
 
@@ -225,7 +246,7 @@
                 </div>
 
             </div>
-            <div class="food_cart11" id="food_cart">
+            <div class="food_cart" data-price="120" id="Kimchi">
                 <div id="img_box" class="img11"></div>
                 <!-- detail -->
 
@@ -244,7 +265,7 @@
                 </div>
 
             </div>
-            <div class="food_cart12" id="food_cart">
+            <div class="food_cart" data-price="180" id="Melonpan">
                 <div id="img_box" class="img12"></div>
                 <!-- detail -->
 
@@ -263,7 +284,7 @@
                 </div>
 
             </div>
-            <div class="food_cart13" id="food_cart">
+            <div class="food_cart" data-price="200" id="Paneer Butter">
                 <div id="img_box" class="img13"></div>
                 <!-- detail -->
 
@@ -282,7 +303,7 @@
                 </div>
 
             </div>
-            <div class="food_cart14" id="food_cart">
+            <div class="food_cart" data-price="240" id="Mandu">
                 <div id="img_box" class="img14"></div>
                 <!-- detail -->
 
@@ -301,7 +322,7 @@
                 </div>
 
             </div>
-            <div class="food_cart15" id="food_cart">
+            <div class="food_cart" data-price="160" id="MOCHI">
                 <div id="img_box" class="img15"></div>
                 <!-- detail -->
 
@@ -320,7 +341,7 @@
                 </div>
 
             </div>
-            <div class="food_cart16" id="food_cart">
+            <div class="food_cart" data-price="150" id="Pav Bhaji ">
                 <div id="img_box" class="img16"></div>
                 <!-- detail -->
 
@@ -339,7 +360,7 @@
                 </div>
 
             </div>
-            <div class="food_cart17" id="food_cart">
+            <div class="food_cart" data-price="300" id="Ramen">
                 <div id="img_box" class="img17"></div>
                 <!-- detail -->
 
@@ -358,7 +379,7 @@
                 </div>
 
             </div>
-            <div class="food_cart18" id="food_cart">
+            <div class="food_cart" data-price="260" id="Okonomiyaki">
                 <div id="img_box" class="img18"></div>
                 <!-- detail -->
 
@@ -377,7 +398,7 @@
                 </div>
 
             </div>
-            <div class="food_cart19" id="food_cart">
+            <div class="food_cart" data-price="350" id="Pizza">
                 <div id="img_box" class="img19"></div>
                 <!-- detail -->
 
@@ -396,7 +417,7 @@
                 </div>
 
             </div>
-            <div class="food_cart20" id="food_cart">
+            <div class="food_cart" data-price="320" id="Soondubu Jjigae">
                 <div id="img_box" class="img20"></div>
                 <!-- detail -->
 
@@ -415,7 +436,7 @@
                 </div>
 
             </div>
-            <div class="food_cart21" id="food_cart">
+            <div class="food_cart" data-price="180" id="Onigiri">
                 <div id="img_box" class="img21"></div>
                 <!-- detail -->
 
@@ -434,7 +455,7 @@
                 </div>
 
             </div>
-            <div class="food_cart22" id="food_cart">
+            <div class="food_cart" data-price="90" id="Salted Lassi">
                 <div id="img_box" class="img22"></div>
                 <!-- detail -->
 
@@ -453,7 +474,7 @@
                 </div>
 
             </div>
-            <div class="food_cart23" id="food_cart">
+            <div class="food_cart" data-price="250" id="Tteokbokki">
                 <div id="img_box" class="img23"></div>
                 <!-- detail -->
 
@@ -472,7 +493,7 @@
                 </div>
 
             </div>
-            <div class="food_cart24" id="food_cart">
+            <div class="food_cart" data-price="400" id="Sushi">
                 <div id="img_box" class="img24"></div>
                 <!-- detail -->
 
@@ -491,7 +512,7 @@
                 </div>
 
             </div>
-            <div class="food_cart25" id="food_cart">
+            <div class="food_cart" data-price="120" id="Sambar">
                 <div id="img_box" class="img25"></div>
                 <!-- detail -->
 
@@ -510,7 +531,7 @@
                 </div>
 
             </div>
-            <div class="food_cart26" id="food_cart">
+            <div class="food_cart" data-price="220" id="Tteokguk">
                 <div id="img_box" class="img26"></div>
                 <!-- detail -->
 
@@ -529,7 +550,7 @@
                 </div>
 
             </div>
-            <div class="food_cart27" id="food_cart">
+            <div class="food_cart" data-price="280" id="Takoyaki">
                 <div id="img_box" class="img27"></div>
                 <!-- detail -->
 
@@ -548,7 +569,7 @@
                 </div>
 
             </div>
-            <div class="food_cart28" id="food_cart">
+            <div class="food_cart" data-price="300" id="Subway Sandwiches">
                 <div id="img_box" class="img28"></div>
                 <!-- detail -->
 
@@ -567,7 +588,7 @@
                 </div>
 
             </div>
-            <div class="food_cart29" id="food_cart">
+            <div class="food_cart" data-price="350" id="𝗕𝗶𝗯𝗶𝗺𝗯𝗮𝗽">
                 <div id="img_box" class="img29"></div>
                 <!-- detail -->
 
@@ -586,7 +607,7 @@
                 </div>
 
             </div>
-            <div class="food_cart30" id="food_cart">
+            <div class="food_cart" data-price="370" id="Tonkatsu">
                 <div id="img_box" class="img30"></div>
                 <!-- detail -->
 
@@ -605,7 +626,7 @@
                 </div>
 
             </div>
-            <div class="food_cart31" id="food_cart">
+            <div class="food_cart" data-price="100" id="Idli">
                 <div id="img_box" class="img31"></div>
                 <!-- detail -->
 
@@ -624,7 +645,7 @@
                 </div>
 
             </div>
-            <div class="food_cart32" id="food_cart">
+            <div class="food_cart" data-price="" id="food_cart">
                 <div id="img_box" class="img32"></div>
                 <!-- detail -->
 
@@ -643,7 +664,7 @@
                 </div>
 
             </div>
-            <div class="food_cart33" id="food_cart">
+            <div class="food_cart" id="food_cart">
                 <div id="img_box" class="img33"></div>
                 <!-- detail -->
 
@@ -662,7 +683,7 @@
                 </div>
 
             </div>
-            <div class="food_cart34" id="food_cart">
+            <div class="food_cart" id="food_cart">
                 <div id="img_box" class="img34"></div>
                 <!-- detail -->
 
@@ -681,7 +702,7 @@
                 </div>
 
             </div>
-            <div class="food_cart35" id="food_cart">
+            <div class="food_cart" id="food_cart">
                 <div id="img_box" class="img35"></div>
                 <!-- detail -->
 
@@ -700,7 +721,7 @@
                 </div>
 
             </div>
-            <div class="food_cart36" id="food_cart">
+            <div class="food_cart" id="food_cart">
                 <div id="img_box" class="img36"></div>
                 <!-- detail -->
 
@@ -719,7 +740,7 @@
                 </div>
 
             </div>
-            <div class="food_cart37" id="food_cart">
+            <div class="food_cart" id="food_cart">
                 <div id="img_box" class="img37"></div>
                 <!-- detail -->
 
@@ -738,7 +759,7 @@
                 </div>
 
             </div>
-            <div class="food_cart38" id="food_cart">
+            <div class="food_cart" id="food_cart">
                 <div id="img_box" class="img38"></div>
                 <!-- detail -->
 
@@ -757,7 +778,7 @@
                 </div>
 
             </div>
-            <div class="food_cart39" id="food_cart">
+            <div class="food_cart" id="food_cart">
                 <div id="img_box" class="img39"></div>
                 <!-- detail -->
 
@@ -778,7 +799,7 @@
             </div>
 
 
-            <div class="food_cart40" id="food_cart">
+            <div class="food_cart" id="food_cart">
                 <div id="img_box" class="img41"></div>
                 <!-- detail -->
 
@@ -803,5 +824,6 @@
     <footer>
 
     </footer>
+    <script src="script/store.js"></script>
 </body>
 </html>

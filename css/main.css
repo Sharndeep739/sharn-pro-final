@@ -39,7 +39,7 @@ header{
 
 .nav{
     height: 100%;
-    width: 500px;
+    width: 900px;
     position: relative;
     left: -70px;
     display: flex;
@@ -48,17 +48,28 @@ header{
     
 }
 .nav div{
-    border: 2px solid green;
     height: 100%;
     width: 100px;
     text-align: center;
     display: flex;
     align-items: center;
     font-weight: 600;
-     color: black;
+}
+.nav input{
+    height: 65%;
+    width: 500px;
+    position: relative;
+    top: 10px;
+    right: 10px;
+    border-radius: 10px;
+    border: 1px solid;
+}
+.nav input::placeholder{
+    font-size: 17px;
 }
 .nav a{
     text-decoration: none;
+    color: black;
 }
 .nav #home{
     color: green;

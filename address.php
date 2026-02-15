@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+    header("Location: index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +24,12 @@
         </div>
         <div class="nav">
              <a href="main.php"><div id="home">Home</div></a>
-            <a href="store.html"><div id="Store">Store</div></a>
-            <a href="address.html"><div id="Address">Address</div></a>
-            <a href="myorder.html"><div id="myoder">My Order</div></a>
+            <a href="store.php"><div id="Store">Store</div></a>
+            <a href="address.php"><div id="Address">Address</div></a>
+            <a href="myorder.php"><div id="myoder">My Order</div></a>
         </div>
         <div class="cart">
-                <a href="carts.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="carts.php"><i class="fa-solid fa-cart-shopping"></i></a>
             
         </div>
     </header>

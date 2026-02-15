@@ -11,3 +11,11 @@ document.addEventListener("click", function(e){
 
     box.classList.remove("active");
 });
+
+// serch fun
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("searchBar").addEventListener("focus", function() {
+        window.location.href = "store.php";
+    });
+});
+

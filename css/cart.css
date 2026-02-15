@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 body{
     background: #FFF1E1;
 }
@@ -87,4 +88,23 @@ header{
 .cart:hover{
     cursor: pointer;
 
+}
+
+main{
+    border: 2px solid;
+    display: flex;
+    flex-direction: row;
+}
+
+.total_item{
+    height: 500px;
+    width: 700px;
+    border: 2px solid red;
+    position: relative;
+    left: 10px;
+}
+.total_price{
+    height: 500px;
+    width: 500px;
+    border: 2px solid red;
 }

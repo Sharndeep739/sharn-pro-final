@@ -108,17 +108,19 @@ main{
     width: 180px;
     border: none;
     background: black;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 17px;
     border-radius: 23px;
     cursor: pointer;
+    font-weight: bolder;
     transition: all 0.6s ease;
 }
 .content button:hover{
     transform: scale(1.1);
 }
 .content button i{
-    color: white;
+    color: rgb(255, 255, 255);
+    font-weight: 900;
 }
 
 /* change btn */
@@ -165,11 +167,12 @@ main{
     margin: 0 4px 0 4px;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    border: 1px solid black;
+    border: none;
     
 }
 .login_register #buttons_div #register_b{
-    background-color: rgba(10, 123, 216, 0.941);
+    background: rgb(244, 92, 92);
+    border: none;
 }
 
 /* register */
@@ -186,11 +189,11 @@ main{
 
 
 .login_register #register input{
-    height: 30px;
+    height: 40px;
     width: 300px;
-    border-radius: 10px;
-    border: 1px solid black;
-    background: transparent;
+    border-radius: 20px;
+    background-color: #e9ceae;
+    border: none;
     font-size: 15px;
 }
 .login_register #register input::placeholder{
@@ -214,10 +217,13 @@ main{
 .login_register #login input{
     height: 40px;
     width: 300px;
-    border-radius: 10px;
-    border: 1px solid black;
-    background: transparent;
+    border-radius: 20px;
+    border: none;
+    background-color: #e9ceae;
     font-size: 15px;
+}
+.login_register #login input::placeholder{
+    padding: 10px;
 }
 
 /* submint button */
@@ -226,7 +232,7 @@ main{
     height: 40px;
     width: 130px;
     border-radius: 20px;
-    background: rgba(10, 123, 216, 0.941);
+    background: rgba(107, 129, 221, 0.995);;
     border: none;
     cursor: pointer;
     font-size: 20px;
@@ -293,11 +299,12 @@ footer{
 footer div{
     height: 100%;
     width: 100px;
-    background: rgb(255, 249, 227);
+    background: transparent;
     margin: 0 60px 15px 60px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px black;
     font-weight: 700;
+    backdrop-filter: blur(20px);
 }
 #off{
     color: brown;

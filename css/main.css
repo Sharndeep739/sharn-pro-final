@@ -4,7 +4,7 @@
     padding: 0;
 }
 body{
-    background: #FFF1E1;
+    background: #f3e0cb;
 }
 header{
     height: 70px;
@@ -12,16 +12,17 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: #f6efe8;
-    box-shadow: 0px 0px 10px black;
+    
+    
 }
 .username{
     height: 100%;
     width: 250px;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: left;
     align-items: center;
+    
 }
 .username i {
     font-size: 23px;
@@ -56,13 +57,15 @@ header{
     font-weight: 600;
 }
 .nav input{
-    height: 65%;
-    width: 500px;
+    height: 60%;
+    width: 400px;
     position: relative;
-    top: 10px;
-    right: 10px;
-    border-radius: 10px;
-    border: 1px solid;
+    top: 15px;
+    right: 30px;
+    border-radius: 25px;
+    border: none;
+    background-color: #f7ece0;
+    box-shadow: 0px 0px 300px rgba(100, 99, 99, 0.5);
 }
 .nav input::placeholder{
     font-size: 17px;
@@ -85,12 +88,12 @@ header{
     font-weight: 500;
     position: relative;
     top: 13px;
-    right: 50px;
+    right: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    background-color: rgb(211, 211, 211);
+  
     
 }
 .cart a{
@@ -547,112 +550,119 @@ footer i{
 }
 
 
-/* medial qury */
+
+
+/* ================= LARGE TABLETS ================= */
 @media (max-width: 1024px){
 
-    .nav{
-        width: 400px;
-        left: 0;
-    }
-
-    .threeDiv{
-        width: 95%;
-        left: 0;
-    }
-
-    .what_you_get{
-        width: 90%;
-        left: 5%;
-    }
-
-    .slide{
-        height: auto;
-    }
-}
-
-/* Tablets & mobiles */
-@media (max-width: 768px){
-
-    header{
-        flex-wrap: wrap;
-        height: auto;
-        padding: 10px 0;
-    }
-
-    .nav{
-        width: 100%;
-        justify-content: space-around;
-        left: 0;
-    }
-
-    .cart{
-        right: 20px;
-    }
-
-    .slide{
-        margin: 10px;
-    }
-
-    .slide #slide1 #img1{
-        margin: auto;
-    }
-
-    .slide #slide1 #conter_slide1{
-        width: 100%;
-        margin-left: 0;
-        text-align: center;
-        top: -300px;
-    }
-
-    #discover_text,
-    #discover_btn{
-        left: 0;
-        text-align: center;
-    }
-
-    .threeDiv{
-        flex-wrap: wrap;
-        height: auto;
-        padding-bottom: 20px;
-    }
-
-    .what_you_get{
-        height: auto;
-        top: 100px;
-    }
-
-    footer{
-        flex-wrap: wrap;
-        height: auto;
-        padding: 20px 0;
-    }
-}
-
-/* Small phones */
-@media (max-width: 480px){
-
-    .username{
-        width: 100%;
+    main{
         justify-content: center;
     }
 
-    .nav div{
-        width: auto;
+    .content{
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+
+/* ================= TABLETS ================= */
+@media (max-width: 800px){
+
+    main{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img{
+        display: none;
+    }
+
+    .content{
+        width: 100%;
+        text-align: center;
+    }
+
+    .content #CuisineCraft{
+        font-size: 42px;
+    }
+
+    .content #food{
+        font-size: 34px;
+    }
+
+    .btn{
+        width: 150px;
+        height: 45px;
+    }
+
+    .name_cuntry{
+        width: 100%;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px){
+
+    header{
+        min-height: auto;
+        padding: 10px 0;
+    }
+
+    .name_cuntry div{
+        font-size: 16px;
+        height: 50px;
+    }
+
+    .content #CuisineCraft{
+        font-size: 34px;
+    }
+
+    .content #food{
+        font-size: 28px;
+    }
+
+    .content #discribe_line{
+        font-size: 13px;
+    }
+
+    .btn{
+        width: 130px;
+        height: 40px;
         font-size: 14px;
     }
 
-    .slide #slide1 #conter_slide1 pre,
-    .slide #slide1 #conter_slide1 p{
-        font-size: 40px;
-        line-height: 45px;
+    footer{
+        gap: 10px;
     }
 
-    .pro_list .item{
-        width: 90%;
+    footer div{
+        width: 80px;
+        height: 70px;
+        font-size: 14px;
+    }
+}
+
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 360px){
+
+    .content #CuisineCraft{
+        font-size: 28px;
     }
 
-    footer #box{
-        width: 100%;
-        text-align: center;
+    .content #food{
+        font-size: 24px;
+    }
+
+    .btn{
+        width: 120px;
+        height: 38px;
     }
 }

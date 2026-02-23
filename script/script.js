@@ -40,7 +40,7 @@ function registerr(){
     document.getElementById("register").style.display="flex";
     document.getElementById("login").style.display="none";
     document.getElementById("login_b").style.backgroundColor="rgba(255, 255, 255, 0.5)";
-    document.getElementById("register_b").style.backgroundColor="rgba(10, 123, 216, 0.941)";
+    document.getElementById("register_b").style.backgroundColor="rgb(244, 92, 92)";
 
     
 }
@@ -48,7 +48,7 @@ function loginn(){
     document.getElementById("login").style.display="flex";
     document.getElementById("register").style.display="none";
     document.getElementById("register_b").style.backgroundColor="rgba(255, 255, 255, 0.5)";
-    document.getElementById("login_b").style.backgroundColor="rgba(10, 123, 216, 0.941)";
+    document.getElementById("login_b").style.backgroundColor="rgb(244, 92, 92)";
 }
 
 // validation 
@@ -105,7 +105,7 @@ document.getElementById("login").addEventListener("submit", function(e) {
             // redirect karna ho to:
             window.location.href = "main.php";
         } else {
-            alert("wrong passwrd"); // Wrong Password ya other message
+            alert(" user name or Pasword wrong "); // Wrong Password ya other message
         }
 
     })

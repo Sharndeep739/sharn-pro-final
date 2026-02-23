@@ -12,8 +12,6 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: #f6efe8;
-    box-shadow: 0px 0px 10px black;
 }
 .username{
     height: 100%;

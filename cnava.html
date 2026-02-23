@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuisineCraft</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        header {
+            width: 100%;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            background: rgba(10, 10, 20, 0.3);
+            border-bottom: 2px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .name_cuntry {
+            height: 100%;
+            width: 500px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            gap: 10px;
+        }
+        
+        .name_cuntry div {
+            height: 80%;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 107, 107, 0.4);
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(251, 146, 60, 0.15) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .name_cuntry div:hover {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.25) 0%, rgba(251, 146, 60, 0.25) 100%);
+            border-color: rgba(255, 107, 107, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .name_cuntry i {
+            margin-right: 8px;
+            color: #ff6b6b;
+        }
+
+        main {
+            height: 70%;
+            width: 85%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content {
+            height: 400px;
+            width: 420px;
+            position: relative;
+            left: 0;
+            transition: left 0.5s ease;
+        }
+
+        .move-right {
+            left: 550px;
+        }
+
+        .content #top_line i {
+            font-family: cursive;
+            font-size: 36px;
+            font-weight: 600;
+            color: #ff6b6b;
+        }
+
+        .content #CuisineCraft {
+            display: inline;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+            font-size: 60px;
+            font-weight: 900;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .content #food {
+            font-family: cursive;
+            display: inline;
+            background: linear-gradient(135deg, #ffa500 0%, #ffb74d 100%);
+            font-size: 50px;
+            font-weight: 900;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            top: 10px;
+            margin-left: 10px;
+        }
+        
+        .content #discribe_line {
+            position: relative;
+            top: 24px;
+            font-size: 16px;
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+        
+        .btn {
+            position: relative;
+            top: 50px;
+            height: 50px;
+            width: 180px;
+            border: none;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+            color: #ffffff;
+            font-size: 17px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .content button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+        }
+        
+        .content button i {
+            color: #ffffff;
+            font-weight: 900;
+            margin-right: 8px;
+        }
+
+        .change_btn {
+            width: 50px;
+            margin-left: 150px;
+            transform: scale(1.2);
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.2) 0%, rgba(251, 146, 60, 0.2) 100%);
+            border: 2px solid #ff6b6b;
+            color: #ff6b6b;
+            transition: all 0.3s ease;
+        }
+        
+        .change_btn:hover {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.3) 0%, rgba(251, 146, 60, 0.3) 100%);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .login_register {
+            height: 100%;
+            width: 400px;
+            display: none;
+        }
+
+        .register_loginBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            left: -400px;
+        }
+        
+        .login_register #buttons_div {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .login_register #buttons_div button {
+            height: 40px;
+            width: 150px;
+            border: 2px solid rgba(255, 107, 107, 0.4);
+            border-radius: 20px;
+            background-color: rgba(255, 107, 107, 0.1);
+            cursor: pointer;
+            color: #ffffff;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .login_register #buttons_div button:hover {
+            background-color: rgba(255, 107, 107, 0.2);
+            border-color: #ff6b6b;
+        }
+        
+        .login_register #buttons_div #register_b {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+            border: none;
+        }
+        
+        .login_register #buttons_div #register_b:hover {
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .login_register #register {
+            height: 80%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .login_register #register input {
+            height: 45px;
+            width: 85%;
+            padding: 0 15px;
+            border: 2px solid rgba(255, 107, 107, 0.3);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .login_register #register input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .login_register #register input:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="name_cuntry">
+            <div id="indian"><i class="fa-solid fa-burger"></i> Indian</div>
+            <div id="Japanese"><i class="fa-solid fa-bowl-food"></i> Japanese</div>
+            <div id="Korean"><i class="fa-solid fa-bowl-rice"></i> Korean</div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="content">
+            <div id="top_line"><i class="fa-solid fa-utensils"></i></div>
+            <div id="CuisineCraft">CuisineCraft</div>
+            <div id="food">Bites</div>
+            <div id="discribe_line">Explore flavors from around the world</div>
+            <button class="btn"><i class="fa-solid fa-arrow-right"></i>Explore</button>
+            <button class="btn change_btn"><i class="fa-solid fa-arrow-left"></i></button>
+        </div>
+        
+        <div class="login_register register_loginBox">
+            <div id="buttons_div">
+                <button id="login_b">Login</button>
+                <button id="register_b">Register</button>
+            </div>
+            <div id="register">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Confirm Password">
+                <button class="btn">Create Account</button>
+            </div>
+        </div>
+    </main>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cf3a3ef53081b73',t:'MTc3MTMxNDA2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

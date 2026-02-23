@@ -4,7 +4,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
-    background-color: #FFF1E1;;
+    background-color: #f3e0cb;
 }
 a{
     color: black;
@@ -16,8 +16,7 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: #f6efe8;
-    box-shadow: 0px 0px 10px black;
+   
 }
 .username{
     height: 100%;
@@ -60,13 +59,15 @@ header{
     font-weight: 600;
 }
 .nav input{
-    height: 65%;
-    width: 500px;
+    height: 60%;
+    width: 400px;
     position: relative;
-    top: 10px;
-    right: 10px;
-    border-radius: 10px;
-    border: 1px solid;
+    top: 15px;
+    right: 25px;
+    border-radius: 25px;
+    border: none;
+    background-color: #f7ece0;
+    box-shadow: 0px 0px 300px rgba(100, 99, 99, 0.5);
 }
 .nav input::placeholder{
     font-size: 17px;
@@ -94,7 +95,7 @@ header{
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    background-color: rgb(211, 211, 211);
+   
     
 }
 .cart a{
@@ -111,6 +112,11 @@ header{
 .filter{
     height: 70px;
     
+}
+
+.filter input{
+    background-color: #f9dfc2;
+    border: none;
 }
 #lable_price{
     font-size: 17px;

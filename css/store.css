@@ -1,14 +1,13 @@
 *{
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
 }
 body{
-    background-color: #f3e0cb;
-}
-a{
-    color: black;
-    text-decoration: none;
+    background: 
+        radial-gradient(circle at 80% 20%, rgb(255, 255, 255) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(240, 184, 184, 0.925) 0%, transparent 45%),
+        linear-gradient(135deg, #ffd4af 0%, #ffeed9 50%, #ffffff 100%);
 }
 header{
     height: 70px;
@@ -16,15 +15,17 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-   
+    
+    
 }
 .username{
     height: 100%;
     width: 250px;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: left;
     align-items: center;
+    
 }
 .username i {
     font-size: 23px;
@@ -48,33 +49,57 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+.nav::after {
+    content: "";
+    position: absolute;
+    bottom: 13px;
+    left: 430px;
+    width: 60%;
+    height: 40px;
     
-}
-.nav div{
-    height: 100%;
-    width: 100px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-}
-.nav input{
-    height: 60%;
-    width: 400px;
-    position: relative;
-    top: 15px;
-    right: 25px;
-    border-radius: 25px;
-    border: none;
-    background-color: #f7ece0;
-    box-shadow: 0px 0px 300px rgba(100, 99, 99, 0.5);
+    background: linear-gradient(
+        to right,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,0) 100%
+        );
+        
+        pointer-events: none;
+        z-index: 1;
+    }
+    .nav div{
+        height: 100%;
+        width: 100px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+    }
+    .nav input{
+        height: 60%;
+        width: 400px;
+        position: relative;
+        top: 15px;
+        right: 30px;
+        border-radius: 25px;
+        border: none;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 300px rgba(100, 99, 99, 0.5);
+        text-align: left;
+    padding-left: 20px; 
+    outline: none;
+
 }
 .nav input::placeholder{
     font-size: 17px;
+
 }
+
 .nav a{
     text-decoration: none;
     color: black;
+    z-index: 2;    
 }
 .nav #Store{
     color: green;
@@ -89,13 +114,14 @@ header{
     font-size: 25px;
     font-weight: 500;
     position: relative;
-    top: 13px;
-    right: 50px;
+    top: 18px;
+    right: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-   
+    z-index: 2;
+  
     
 }
 .cart a{
@@ -103,9 +129,8 @@ header{
 }
 .cart:hover{
     cursor: pointer;
-
+    
 }
-
 
 /* //main  */
 
@@ -139,7 +164,7 @@ header{
     left: 30px;
     height: 25px;
     width: 100px;
-    background-color: rgba(10, 123, 216, 0.941);
+    background-color: rgb(43, 126, 43);
     font-size: 14px;
     border: 1px solid;
     border-radius: 10px;
@@ -158,12 +183,15 @@ header{
     left: 20px;
     display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 60px;
-  row-gap: 10px;
+  gap: 50px;
+  row-gap: 0px;
+  
 }
 .food_grid #food_cart{
+    border: 2px solid gray;
     height: 340px;
     width: 250px;
+
 }
 
 /* img box */

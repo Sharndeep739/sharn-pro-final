@@ -296,18 +296,67 @@ footer{
     justify-content: center;
     align-items: center;
 }
-footer div{
+footer #box1,#box2,#box3{
     height: 100%;
-    width: 100px;
+    width: 130px;
     background: transparent;
     margin: 0 60px 15px 60px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px black;
     font-weight: 700;
     backdrop-filter: blur(20px);
+    overflow: hidden;
 }
+footer #red_box,#yellow_box,#green_box{
+    height: 30px;
+    width: 100%;
+    background-color: rgb(210, 77, 77);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#yellow_box{
+    background-color: goldenrod;
+}
+#green_box{
+    background-color: rgb(51, 102, 51);
+}
+
+/* bacgrund image  */
+footer #box1{
+    background-image: url("../image/food_delivery.png");
+    background-repeat: no-repeat;
+    background-size: 48%;
+    background-position-x: 35px;
+    background-position-y: 30px;
+}
+footer #box2{
+    background-image: url("../image/food\ skooti.png");
+    background-repeat: no-repeat;
+    background-size: 38%;
+    background-position-x: 35px;
+    background-position-y: 30px;
+}
+footer #box3{
+    background-image: url("../image/leef.png");
+    background-repeat: no-repeat;
+    background-size: 38%;
+    background-position-x: 35px;
+    background-position-y: 30px;
+}
+
 #off{
+    position: relative;
+    top: 32px;
     color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
 }
 
 

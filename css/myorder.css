@@ -4,7 +4,10 @@
     padding: 0;
 }
 body{
-    background: #FFF1E1;
+    background: 
+        radial-gradient(circle at 80% 20%, rgb(255, 255, 255) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(240, 184, 184, 0.925) 0%, transparent 45%),
+        linear-gradient(135deg, #ffd4af 0%, #ffeed9 50%, #ffffff 100%);
 }
 header{
     height: 70px;
@@ -12,14 +15,17 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
+    
 }
 .username{
     height: 100%;
     width: 250px;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: left;
     align-items: center;
+    
 }
 .username i {
     font-size: 23px;
@@ -37,27 +43,65 @@ header{
 
 .nav{
     height: 100%;
-    width: 500px;
+    width: 900px;
     position: relative;
     left: -70px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+.nav::after {
+    content: "";
+    position: absolute;
+    bottom: 13px;
+    left: 430px;
+    width: 60%;
+    height: 40px;
     
+    background: linear-gradient(
+        to right,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,0) 100%
+        );
+        
+        pointer-events: none;
+        z-index: 1;
+    }
+    .nav div{
+        height: 100%;
+        width: 100px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+    }
+    .nav input{
+        height: 60%;
+        width: 400px;
+        position: relative;
+        top: 15px;
+        right: 30px;
+        border-radius: 25px;
+        border: none;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 300px rgba(100, 99, 99, 0.5);
+        text-align: left;
+    padding-left: 20px; 
+    outline: none;
+
 }
-.nav div{
-    height: 100%;
-    width: 100px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-     color: black;
+.nav input::placeholder{
+    font-size: 17px;
+
 }
+
 .nav a{
     text-decoration: none;
+    color: black;
+    z-index: 2;    
 }
-.nav #myoder{
+.nav #Myoder{
     color: green;
 }
 .nav div:hover{
@@ -70,13 +114,14 @@ header{
     font-size: 25px;
     font-weight: 500;
     position: relative;
-    top: 13px;
-    right: 50px;
+    top: 18px;
+    right: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    background-color: rgb(211, 211, 211);
+    z-index: 2;
+  
     
 }
 .cart a{
@@ -84,5 +129,5 @@ header{
 }
 .cart:hover{
     cursor: pointer;
-
+    
 }

@@ -26,7 +26,7 @@ if(!isset($_SESSION['username'])){
                 </div>
             </div>
             <div class="nav">
-                <input type="search" id="searchBar" placeholder="search">
+                <input type="search" id="searchBar" placeholder="Search">
                 <a href="main.php"><div id="home">Home</div></a>
                 <a href="store.php"><div id="Store">Store</div></a>
                 <a href="myorder.php"><div id="myoder">My Order</div></a>

@@ -28,7 +28,7 @@ if(!isset($_SESSION['username'])){
             </div>
         </div>
         <div class="nav">
-                <input type="search" id="searchBar" placeholder="search">
+                <input type="search" id="searchBar" placeholder="Search">
                 <a href="main.php"><div id="home">Home</div></a>
                 <a href="store.php"><div id="Store">Store</div></a>
                 <a href="myorder.php"><div id="myoder">My Order</div></a>
@@ -52,7 +52,6 @@ if(!isset($_SESSION['username'])){
 
 
         <div class="food_grid">
-            <a href="index.php">
             <div class="food_cart" data-price="120" id="Burger">
                 <!-- img -->
 
@@ -544,7 +543,7 @@ if(!isset($_SESSION['username'])){
                     </div>
                     <div id="item">⭐ 4.6 · 20–25 mins  </div>
                     <div id="detail">
-                        Korean, Rice Cake Soup, Main Course
+                        Korean, Rice Cake Soup
                     </div>
                     <button class="to_cart">Add To Cart</button>
                 </div>

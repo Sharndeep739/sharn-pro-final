@@ -71,19 +71,18 @@
     </main>
     <footer>
         <div id="box1">
-            <pre> Food
- delivery</pre>
+            <div id="red_box">Food Delivery</div>
             <pre id="off"> 60% OFF</pre>
         </div>
         <div id="box2">
-            <pre> Fast
- delivery</pre>
+            <div id="yellow_box">Fast Delivery</div>
+            
             <pre id="off"> 60% OFF</pre>
         </div>
         </div>
         <div id="box3">
-            <pre> Fresh
- delivery</pre>
+            <div id="green_box">Fresh Delivery</div>
+            
             <pre id="off"> 60% OFF</pre>
         </div>
         </div>

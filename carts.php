@@ -8,6 +8,21 @@ $query = "SELECT * FROM cart WHERE user_id='$user_id'";
 $result = mysqli_query($conn, $query);
 
 $grand_total = 0;
+$cart_count = 0;
+
+if(isset($_SESSION['user_id'])){
+    $user_id = $_SESSION['user_id'];
+
+    $query = mysqli_query($conn, 
+        "SELECT COUNT(*) as total FROM cart WHERE user_id = '$user_id'"
+    );
+
+    $data = mysqli_fetch_assoc($query);
+
+    if($data['total'] != NULL){
+        $cart_count = $data['total'];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,16 +48,20 @@ $grand_total = 0;
                 <a href="main.php"><div id="home">Home</div></a>
                 <a href="store.php"><div id="Store">Store</div></a>
                 <a href="myorder.php"><div id="myoder">My Order</div></a>
+                <div class="cart">
+            <a href="carts.php"><i class="fa-solid fa-cart-shopping"></i></a>
+                <?php if($cart_count > 0): ?>
+                <span class="cart-count"><?php echo $cart_count; ?></span>
+                <?php endif; ?>
+            
             </div>
-            <div class="cart">
-                <a href="carts.php"><i class="fa-solid fa-cart-shopping"></i></a>
-                
             </div>
+            
         </header>
 
     <main>
   <div class="cart-container">
-    <h2>🛒 My Cart</h2>
+    <h2>My Cart</h2>
 
     <?php if(mysqli_num_rows($result) > 0) { ?>
 
@@ -65,18 +84,24 @@ $grand_total = 0;
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                 <button class="remove-btn">Remove</button>
             </form>
+
+            <form method="POST" action="/testphp/buy_now.php">
+                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                <button class="buy-btn">Buy Now</button>
+            </form>
         </div>
 
         <?php } ?>
 
         <div class="total-box">
-            Grand Total: ₹<?php echo $grand_total; ?>
+            Total Price: ₹<?php echo $grand_total; ?>
+            <button class="buy_all" type="buy_All">Buy All</button>
         </div>
 
     <?php } else { ?>
 
         <div class="empty-cart">
-            <h3>Your Cart is Empty 🛒</h3>
+            <h3>Your Cart is Empty </h3>
             <p>Add items from store to continue.</p>
             <a href="store.php" class="go-store-btn">Go To Store</a>
         </div>
@@ -85,7 +110,7 @@ $grand_total = 0;
     
   </div>
 </main>
+
     <script src="script/cart.js"></script>
-    
 </body>
 </html>

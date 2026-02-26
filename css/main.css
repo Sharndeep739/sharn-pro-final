@@ -104,18 +104,15 @@ header{
 .nav #home{
     color: green;
 }
-.nav div:hover{
+.nav a:hover{
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration:  underline;
 }
 .cart{
     height: 40px;
-    width: 40px;
+    width: 47px;
     font-size: 25px;
     font-weight: 500;
-    position: relative;
-    top: 18px;
-    right: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,6 +124,27 @@ header{
 .cart a{
     color: rgb(0, 0, 0);
 }
+.cart .cart-count{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: red;
+    position: relative;
+    top: -11px;
+    right: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 3;
+}
+.nav .cart:hover{
+    text-decoration: none;
+}
+
 .cart:hover{
     cursor: pointer;
     

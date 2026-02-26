@@ -101,7 +101,7 @@ header{
     color: black;
     z-index: 2;    
 }
-.nav #home{
+.nav #myoder{
     color: green;
 }
 .nav div:hover{
@@ -114,15 +114,30 @@ header{
     font-size: 25px;
     font-weight: 500;
     position: relative;
-    top: 18px;
-    right: 150px;
-    display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    
-  
-    
+    z-index: 2;
+}
+.cart .cart-count{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: red;
+    position: relative;
+    top: -11px;
+    right: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 3;
+}
+.nav .cart:hover{
+    text-decoration: none;
 }
 .cart a{
     color: rgb(0, 0, 0);

@@ -15,7 +15,6 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid green;
     
 }
 .username{
@@ -49,7 +48,6 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border: 1px solid red;
 }
 .nav::after {
     content: "";
@@ -79,7 +77,7 @@ header{
     }
     .nav input{
         height: 60%;
-        width: 370px;
+        width: 400px;
         position: relative;
         top: 15px;
         right: 30px;
@@ -88,8 +86,8 @@ header{
         background-color: #ffffff;
         box-shadow: 0px 0px 300px rgba(100, 99, 99, 0.5);
         text-align: left;
-    padding-left: 20px; 
-    outline: none;
+        padding-left: 20px; 
+        outline: none;
 
 }
 .nav input::placeholder{
@@ -146,9 +144,7 @@ header{
 .nav .cart:hover{
     text-decoration: none;
 }
-.cart .cart-count:hover {
-   text-decoration: none;
-}
+
 .cart:hover{
     cursor: pointer;
     

@@ -1,9 +1,6 @@
 <?php
-session_start();
-if(!isset($_SESSION['username'])){
-    header("Location: index.php");
-    exit();
-}
+include "actions/db.php"; // db connection
+include "actions/cart_count.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,12 +26,15 @@ if(!isset($_SESSION['username'])){
              <a href="main.php"><div id="home">Home</div></a>
             <a href="store.php"><div id="Store">Store</div></a>
             <a href="myorder.php"><div id="myoder">My Order</div></a>
+            <div class="cart">
+            <a href="carts.php"><i class="fa-solid fa-cart-shopping"></i></a>
+                <?php if($cart_count > 0): ?>
+                <span class="cart-count"><?php echo $cart_count; ?></span>
+                <?php endif; ?>
+            
+            </div>
         </div>
-        <div class="cart">
-                            <a href="carts.php"><i class="fa-solid fa-cart-shopping"></i></a>
-
-           
-        </div>
+        
     </header>
 </body>
 </html>

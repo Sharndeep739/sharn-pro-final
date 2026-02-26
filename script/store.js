@@ -39,3 +39,29 @@ filterBtn.addEventListener("click", function(){
 
 });
 
+
+//recover
+
+document.querySelectorAll(".to_cart").forEach(button => {
+    button.addEventListener("click", function() {
+
+        let parent = this.closest(".food_cart");
+
+        let name = parent.querySelector("#item_name").innerText;
+        let price = parent.getAttribute("data-price");
+        let image = parent.querySelector(".img_box").classList[0]; // img1
+
+        // AJAX request
+        fetch("/testphp/actions/to_cart.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `name=${name}&price=${price}&image=${image}`
+        })
+        .then(response => response.text())
+        .then(data => {
+        });
+
+    });
+});

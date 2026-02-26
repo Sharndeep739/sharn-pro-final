@@ -73,7 +73,7 @@ document.getElementById("register").addEventListener("submit", function(e){
     .then(response => response.text())
     .then(data => {
         
-            alert("Register Successful ");
+            alert("Register Successfull ");
 
             // redirect karna ho to:
             window.location.href = "main.php";
@@ -100,7 +100,6 @@ document.getElementById("login").addEventListener("submit", function(e) {
     .then(data => {
 
         if (data.trim() === "Login Success") {
-            alert("Login Successful ");
 
             // redirect karna ho to:
             window.location.href = "main.php";

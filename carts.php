@@ -37,45 +37,10 @@ if(!isset($_SESSION['username'])){
         </header>
 
     <main>
-        <div class="cart-overlay"></div>
-
-<div class="cart">
-    <div class="cart-header">
-        <h2>Your Cart</h2>
-        <span class="close-cart">&times;</span>
-    </div>
-
-    <div class="cart-body" id="cart-items">
-        <!-- Cart items dynamically add honge -->
-        
-        <div class="cart-item">
-            <img src="food.jpg" alt="">
-            
-            <div class="item-details">
-                <h4>Korean Noodles</h4>
-                <p>₹250</p>
-                
-                <div class="quantity">
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
-                </div>
-            </div>
-
-            <span class="remove-item">🗑</span>
-        </div>
-
-    </div>
-
-    <div class="cart-footer">
-        <div class="total">
-            <h3>Total:</h3>
-            <h3>₹250</h3>
-        </div>
-        <button class="checkout-btn">Proceed to Checkout</button>
-    </div>
-</div>
+       <div id="cart_items"></div>
+    
     </main>
+    <script src="script/cart.js"></script>
     
 </body>
 </html>

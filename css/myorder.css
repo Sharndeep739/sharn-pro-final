@@ -101,7 +101,7 @@ header{
     color: black;
     z-index: 2;    
 }
-.nav #Myoder{
+.nav #home{
     color: green;
 }
 .nav div:hover{
@@ -120,12 +120,13 @@ header{
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    z-index: 2;
+    
   
     
 }
 .cart a{
     color: rgb(0, 0, 0);
+
 }
 .cart:hover{
     cursor: pointer;

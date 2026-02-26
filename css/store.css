@@ -187,7 +187,7 @@ header{
   row-gap: 0px;
   
 }
-.food_grid #food_cart{
+.food_grid .food_cart{
     border: 2px solid gray;
     height: 340px;
     width: 250px;
@@ -195,7 +195,7 @@ header{
 }
 
 /* img box */
-.food_grid #img_box{
+.food_grid .img_box{
     height: 200px;
     width: 100%;
     box-shadow: inset 0px -30px 30px black;

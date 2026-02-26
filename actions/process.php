@@ -1,6 +1,7 @@
 <?php
 session_start();
-$conn = new mysqli("localhost","root","BTSsharndeep267","test");
+include 'db.php';
+
 
 $name = $_POST['name'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -15,15 +16,9 @@ if($stmt->execute()){
  $_SESSION['username'] = $name;
     $_SESSION['user_id'] = $conn->insert_id;
 
-    echo "<script>
-        alert('Registration Successful 🎉');
-        window.location.href='main.php';
-    </script>";
+   
 
-} else {
-    echo "Registration Failed";
-}
-
+} 
 $conn->query($sql);
 
 ?>

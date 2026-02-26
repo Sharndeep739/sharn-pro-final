@@ -1,9 +1,13 @@
 <?php
 session_start();
-if(!isset($_SESSION['username'])){
-    header("Location: index.php");
-    exit();
-}
+include 'actions/db.php';
+
+$user_id = $_SESSION['user_id'];
+
+$query = "SELECT * FROM cart WHERE user_id='$user_id'";
+$result = mysqli_query($conn, $query);
+
+$grand_total = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,9 +41,50 @@ if(!isset($_SESSION['username'])){
         </header>
 
     <main>
-       <div id="cart_items"></div>
+  <div class="cart-container">
+    <h2>🛒 My Cart</h2>
+
+    <?php if(mysqli_num_rows($result) > 0) { ?>
+
+        <?php while($row = mysqli_fetch_assoc($result)) { 
+            $total = $row['price'] * $row['quantity'];
+            $grand_total += $total;
+        ?>
+
+        <div class="cart-item">
+            <img src="image/<?php echo $row['image']; ?>.jpg">
+
+            <div class="item-info">
+                <h3><?php echo $row['product_name']; ?></h3>
+                <p>Price: ₹<?php echo $row['price']; ?></p>
+                <p>Quantity: <?php echo $row['quantity']; ?></p>
+                <p>Total: ₹<?php echo $total; ?></p>
+            </div>
+
+            <form method="POST" action="/testphp/actions/remove.php">
+                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                <button class="remove-btn">Remove</button>
+            </form>
+        </div>
+
+        <?php } ?>
+
+        <div class="total-box">
+            Grand Total: ₹<?php echo $grand_total; ?>
+        </div>
+
+    <?php } else { ?>
+
+        <div class="empty-cart">
+            <h3>Your Cart is Empty 🛒</h3>
+            <p>Add items from store to continue.</p>
+            <a href="store.php" class="go-store-btn">Go To Store</a>
+        </div>
+
+    <?php } ?>
     
-    </main>
+  </div>
+</main>
     <script src="script/cart.js"></script>
     
 </body>

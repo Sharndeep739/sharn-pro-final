@@ -49,7 +49,7 @@ document.querySelectorAll(".to_cart").forEach(button => {
 
         let name = parent.querySelector("#item_name").innerText;
         let price = parent.getAttribute("data-price");
-        let image = parent.querySelector(".img_box").classList[0]; // img1
+        let image = parent.dataset.image;
 
         // AJAX request
         fetch("/testphp/actions/to_cart.php", {

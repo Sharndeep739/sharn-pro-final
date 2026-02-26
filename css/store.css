@@ -15,7 +15,7 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+    border: 1px solid green;
     
 }
 .username{
@@ -49,6 +49,7 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    border: 1px solid red;
 }
 .nav::after {
     content: "";
@@ -78,7 +79,7 @@ header{
     }
     .nav input{
         height: 60%;
-        width: 400px;
+        width: 370px;
         position: relative;
         top: 15px;
         right: 30px;
@@ -101,6 +102,7 @@ header{
     color: black;
     z-index: 2;    
 }
+
 .nav #Store{
     color: green;
 }
@@ -110,12 +112,9 @@ header{
 }
 .cart{
     height: 40px;
-    width: 40px;
+    width: 47px;
     font-size: 25px;
     font-weight: 500;
-    position: relative;
-    top: 18px;
-    right: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,6 +125,29 @@ header{
 }
 .cart a{
     color: rgb(0, 0, 0);
+}
+.cart .cart-count{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: red;
+    position: relative;
+    top: -11px;
+    right: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 3;
+}
+.nav .cart:hover{
+    text-decoration: none;
+}
+.cart .cart-count:hover {
+   text-decoration: none;
 }
 .cart:hover{
     cursor: pointer;

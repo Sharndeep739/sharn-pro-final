@@ -1,9 +1,30 @@
 
 <?php
 session_start();
+
+
 if(!isset($_SESSION['username'])){
     header("Location: index.php");
     exit();
+}
+
+// Cart Count Logic
+include "actions/db.php"; // db connection
+
+$cart_count = 0;
+
+if(isset($_SESSION['user_id'])){
+    $user_id = $_SESSION['user_id'];
+
+    $query = mysqli_query($conn, 
+        "SELECT COUNT(*) as total FROM cart WHERE user_id = '$user_id'"
+    );
+
+    $data = mysqli_fetch_assoc($query);
+
+    if($data['total'] != NULL){
+        $cart_count = $data['total'];
+    }
 }
 ?>
 
@@ -32,11 +53,16 @@ if(!isset($_SESSION['username'])){
                 <a href="main.php"><div id="home">Home</div></a>
                 <a href="store.php"><div id="Store">Store</div></a>
                 <a href="myorder.php"><div id="myoder">My Order</div></a>
-            </div>
-        <div class="cart">
+                <div class="cart">
             <a href="carts.php"><i class="fa-solid fa-cart-shopping"></i></a>
+                <?php if($cart_count > 0): ?>
+                <span class="cart-count"><?php echo $cart_count; ?></span>
+                <?php endif; ?>
+            
 
-        </div>
+            </div>
+            </div>
+        
     </header>
     <main>
         <div class="filter">
@@ -52,7 +78,7 @@ if(!isset($_SESSION['username'])){
 
 
         <div class="food_grid">
-            <div class="food_cart" data-price="120" id="Burger">
+            <div class="food_cart" data-price="120" id="Burger" data-image="indian/crack\ burgers">
                 <!-- img -->
 
                 <div class="img_box img1 "></div>
@@ -73,7 +99,7 @@ if(!isset($_SESSION['username'])){
                 </div>
             </div>
         
-            <div class="food_cart" data-price="150" id="Miso Soup">
+            <div class="food_cart" data-price="150" id="Miso Soup" data-image="japneses/Amazing\ Miso\ Soup_\ A\ Delicious\ Comforting\ Classic">
 
                 <div class="img_box img2"></div>
                 <!-- detail -->
@@ -93,7 +119,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="280" id="Bulgogi">
+            <div class="food_cart" data-price="280" id="Bulgogi" data-image="korean/Bulgogi\ \(Spicy\ Bulgogi\)">
                 <div class="img_box img3"></div>
                 <!-- detail -->
 
@@ -112,7 +138,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="140" id="Samosa">
+            <div class="food_cart" data-price="140" id="Samosa" data-image="indian/Crispy\ Aloo\ Samosa">
                 <div class="img_box img4"></div>
                 <!-- detail -->
 
@@ -131,7 +157,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="90" id="Egg Sandwich">
+            <div class="food_cart" data-price="90" id="Egg Sandwich" data-image="japneses/Egg\ Salad\ Sandwich">
                 <div class="img_box img5"></div>
                 <!-- detail -->
 
@@ -150,7 +176,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="260" id="Japchae">
+            <div class="food_cart" data-price="260" id="Japchae" data-image="korean/Japchae">
                 <div class="img_box img6"></div>
                 <!-- detail -->
 
@@ -169,7 +195,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="80" id="Dosa">
+            <div class="food_cart" data-price="80" id="Dosa" data-image="indian/dosa\ on">
                 <div class="img_box img7"></div>
                 <!-- detail -->
 
@@ -188,7 +214,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="220" id="Kimbap">
+            <div class="food_cart" data-price="220" id="Kimbap" data-image="korean/Kimbap">
                 <div class="img_box img8"></div>
                 <!-- detail -->
 
@@ -207,7 +233,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="250" id="Japnese Curry">
+            <div class="food_cart" data-price="250" id="Japnese Curry" data-image="japneses/Japanese\ Curry\ on\ Rice">
                 <div class="img_box img9"></div>
                 <!-- detail -->
 
@@ -226,7 +252,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="90" id="Gulab Jaman">
+            <div class="food_cart" data-price="90" id="Gulab Jaman" data-image="indian/Gulab\ Jamun!\ Indian\ Dessert\ Recipes\ _\ Sweets\ _\ Desserts">
                 <div class="img_box img10"></div>
                 <!-- detail -->
 
@@ -245,7 +271,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="120" id="Kimchi">
+            <div class="food_cart" data-price="120" id="Kimchi" data-image="korean/kimchi">
                 <div class="img_box img11"></div>
                 <!-- detail -->
 
@@ -264,7 +290,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="180" id="Melonpan">
+            <div class="food_cart" data-price="180" id="Melonpan" data-image="japneses/melonpan">
                 <div class="img_box img12"></div>
                 <!-- detail -->
 
@@ -283,7 +309,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="200" id="Paneer Butter">
+            <div class="food_cart" data-price="200" id="Paneer Butter" data-image="indian/Paneer\ Butter\ Masala\ Recipe\ Ever!">
                 <div class="img_box img13"></div>
                 <!-- detail -->
 
@@ -302,7 +328,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="240" id="Mandu">
+            <div class="food_cart" data-price="240" id="Mandu" data-image="korean/Mandu\ with\ Sweet\ Soy\ Drizzle">
                 <div class="img_box img14"></div>
                 <!-- detail -->
 
@@ -321,7 +347,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="160" id="MOCHI">
+            <div class="food_cart" data-price="160" id="MOCHI" data-image="japneses/MOCHI\ 3D">
                 <div class="img_box img15"></div>
                 <!-- detail -->
 
@@ -340,7 +366,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="150" id="Pav Bhaji ">
+            <div class="food_cart" data-price="150" id="Pav Bhaji " data-image="indian/Pav\ Bhaji\ Food">
                 <div class="img_box img16"></div>
                 <!-- detail -->
 
@@ -359,7 +385,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="300" id="Ramen">
+            <div class="food_cart" data-price="300" id="Ramen" data-image="korean/Ramen\ Noodles\ \(Vegan\ Recipe\)">
                 <div class="img_box img17"></div>
                 <!-- detail -->
 
@@ -378,7 +404,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="260" id="Okonomiyaki">
+            <div class="food_cart" data-price="260" id="Okonomiyaki" data-image="japneses/Okonomiyaki\ ">
                 <div class="img_box img18"></div>
                 <!-- detail -->
 
@@ -397,7 +423,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="350" id="Pizza">
+            <div class="food_cart" data-price="350" id="Pizza" data-image="indian/pizza">
                 <div class="img_box img19"></div>
                 <!-- detail -->
 
@@ -416,7 +442,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="320" id="Soondubu Jjigae">
+            <div class="food_cart" data-price="320" id="Soondubu Jjigae" data-image="korean/Soondubu\ Jjigae">
                 <div class="img_box img20"></div>
                 <!-- detail -->
 
@@ -435,7 +461,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="180" id="Onigiri">
+            <div class="food_cart" data-price="180" id="Onigiri" data-image="japneses/Onigiri">
                 <div class="img_box img21"></div>
                 <!-- detail -->
 
@@ -454,7 +480,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="90" id="Salted Lassi">
+            <div class="food_cart" data-price="90" id="Salted Lassi" data-image="indian/Salted\ Lassi\ -\ Indian\ Style\ Yogurt\ based\ Summer\ Beverage\ Recipe\ -\ Step\ by\ Step">
                 <div class="img_box img22"></div>
                 <!-- detail -->
 
@@ -473,7 +499,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="250" id="Tteokbokki">
+            <div class="food_cart" data-price="250" id="Tteokbokki" data-image="korean/Tteokbokki\ with\ Boiled\ Eggs">
                 <div class="img_box img23"></div>
                 <!-- detail -->
 
@@ -492,7 +518,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="400" id="Sushi">
+            <div class="food_cart" data-price="400" id="Sushi" data-image="japneses/Sushi\ dinner">
                 <div class="img_box img24"></div>
                 <!-- detail -->
 
@@ -511,7 +537,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="120" id="Sambar">
+            <div class="food_cart" data-price="120" id="Sambar" data-image="indian/Sambar\ Powder\ Recipe">
                 <div class="img_box img25"></div>
                 <!-- detail -->
 
@@ -530,7 +556,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="220" id="Tteokguk">
+            <div class="food_cart" data-price="220" id="Tteokguk" data-image="korean/Tteokguk\ \(Korean\ Rice\ Cake\ Soup\)\ -\ Beyond\ Kimchee">
                 <div class="img_box img26"></div>
                 <!-- detail -->
 
@@ -549,7 +575,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="280" id="Takoyaki">
+            <div class="food_cart" data-price="280" id="Takoyaki" data-image="japneses/Takoyaki">
                 <div class="img_box img27"></div>
                 <!-- detail -->
 
@@ -568,7 +594,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="300" id="Subway Sandwiches">
+            <div class="food_cart" data-price="300" id="Subway Sandwiches" data-image="indian/Subway\ Sandwiches\,\ According\ to\ Dietitians">
                 <div class="img_box img28"></div>
                 <!-- detail -->
 
@@ -587,7 +613,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="350" id="𝗕𝗶𝗯𝗶𝗺𝗯𝗮𝗽">
+            <div class="food_cart" data-price="350" id="𝗕𝗶𝗯𝗶𝗺𝗯𝗮𝗽" data-image="korean/𝗕𝗶𝗯𝗶𝗺𝗯𝗮𝗽\ \(𝗞𝗼𝗿𝗲𝗮𝗻\ 𝗠𝗶𝘅𝗲𝗱\ 𝗥𝗶𝗰𝗲\ 𝗕𝗼𝘄𝗹\)">
                 <div class="img_box img29"></div>
                 <!-- detail -->
 
@@ -606,7 +632,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="370" id="Tonkatsu">
+            <div class="food_cart" data-price="370" id="Tonkatsu" data-image="japneses/tonkatsu">
                 <div class="img_box img30"></div>
                 <!-- detail -->
 
@@ -625,7 +651,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="100" id="Idli">
+            <div class="food_cart" data-price="100" id="Idli" data-image="indian/Yummy\ Rawa\ Idli\ from\ Diksha\'s\ Cafe">
                 <div class="img_box img31"></div>
                 <!-- detail -->
 
@@ -644,7 +670,7 @@ if(!isset($_SESSION['username'])){
                 </div>
 
             </div>
-            <div class="food_cart" data-price="" id="food_cart">
+            <div class="food_cart" data-price="" id="food_cart" data-image="">
                 <div class="img_box img32"></div>
                 <!-- detail -->
 

@@ -1,10 +1,21 @@
-<?php
+<!-- <?php
 session_start();
 include 'actions/db.php';
 
 if(!isset($_SESSION['user_id'])){
     header("Location: index.php");
     exit();
+}
+if(isset($_POST['id'], $_POST['name'], $_POST['price'], $_POST['img'], $_POST['quantity'])) {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $img = $_POST['img'];
+    $quantity = $_POST['quantity'];
+} else {
+    // Agar direct visit hua, redirect kar do cart page pe
+    header("Location: carts.php");
+    exit;
 }
 
 $user_id = $_SESSION['user_id'];
@@ -28,64 +39,62 @@ $prefill = [
     'landmark' => $address_data['landmark'] ?? '',
 ];
 
-// Optional: get cart_id if needed
+
 $cart_id = $_GET['cart_id'] ?? '';
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checkout</title>
-<style>
-body { font-family: Arial, sans-serif; background: #f5f5f5; margin:0; padding:0; }
-.container { width: 50%; margin: 40px auto; background: #fff; padding: 25px 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
-h2 { text-align: center; margin-bottom: 25px; color: #333; }
-.checkout-form input { width: 100%; padding: 12px; margin: 8px 0; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
-.checkout-form button { width: 100%; padding: 15px; margin-top: 15px; background-color: green; color: #fff; border: none; font-size: 18px; cursor: pointer; border-radius: 5px; }
-.checkout-form button:hover { background-color: darkgreen; }
-label { font-weight: bold; margin-top: 10px; display: block; }
-</style>
+<link rel="stylesheet" href="css/buy_now.css">
 </head>
 <body>
+<header>
+
+</header>
 
 <div class="container">
-<h2>Checkout</h2>
+<h2>Address</h2>
 
 <form method="POST" action="actions/place_order.php" class="checkout-form">
     <input type="hidden" name="cart_id" value="<?php echo htmlspecialchars($cart_id); ?>">
 
-    <label>Full Name</label>
+ 
     <input type="text" name="name" placeholder="Full Name" required
            value="<?php echo htmlspecialchars($prefill['name']); ?>">
 
-    <label>Phone Number</label>
     <input type="text" name="phone" placeholder="Phone Number" required
            value="<?php echo htmlspecialchars($prefill['phone']); ?>">
 
-    <label>State</label>
     <input type="text" name="state" placeholder="State" required
            value="<?php echo htmlspecialchars($prefill['state']); ?>">
 
-    <label>City</label>
     <input type="text" name="city" placeholder="City" required
            value="<?php echo htmlspecialchars($prefill['city']); ?>">
 
-    <label>Pin Code</label>
     <input type="number" name="pincode" placeholder="Pin Code" required
            value="<?php echo htmlspecialchars($prefill['pincode']); ?>">
 
-    <label>Area</label>
     <input type="text" name="area" placeholder="Area" required
            value="<?php echo htmlspecialchars($prefill['area']); ?>">
 
-    <label>Landmark / Famous Shop</label>
     <input type="text" name="landmark" placeholder="Famous shop" required
            value="<?php echo htmlspecialchars($prefill['landmark']); ?>">
 
-    <button type="submit">Place Order</button>
+    <button type="submit">SAVE</button>
 </form>
 </div>
+       <div class="total_price" id="totalPrice">
+    <img id="total-img" src="<?php echo $img; ?>" alt="Dish Image">
+    <div>
+        <h3 id="total-name"><?php echo htmlspecialchars($name); ?></h3>
+        <p id="total-amount">Price: ₹<?php echo $price; ?> /-</p>
+        <p id="total-quantity">Quantity: <?php echo $quantity; ?></p>
+    </div>
+</div>
 
+</div>
 </body>
 </html>

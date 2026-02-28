@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if($stmt->execute()){
         echo "Address saved/updated successfully!";
         // redirect to next page if needed
-        // header("Location: payment.php?cart_id=$cart_id");
+        // header("Location: ../buy_now.php");
         exit();
     } else {
         echo "Error: " . $stmt->error;

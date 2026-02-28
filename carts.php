@@ -12,6 +12,7 @@ $cart_count = 0;
 
 if(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
+    
 
     $query = mysqli_query($conn, 
         "SELECT COUNT(*) as total FROM cart WHERE user_id = '$user_id'"
@@ -76,17 +77,33 @@ if(isset($_SESSION['user_id'])){
             <div class="item-info">
                 <h3><?php echo $row['product_name']; ?></h3>
                 <p>Price: ₹<?php echo $row['price']; ?></p>
-                <p>Quantity: <?php echo $row['quantity']; ?></p>
+                <form method="POST" action="actions/update_quantity.php" class="qty-form">
+                    Quantity: <input type="hidden" name="cart_id" value="<?php echo $row['id']; ?>">
+    
+                    <input type="number" 
+                    name="quantity" 
+                    value="<?php echo $row['quantity']; ?>" 
+                     min="1" 
+                    style="width:60px;">
+    
+    <button type="submit">Update</button>
+</form>
                 <p>Total: ₹<?php echo $total; ?></p>
             </div>
 
+            <!-- remove item -->
             <form method="POST" action="/testphp/actions/remove.php">
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                 <button class="remove-btn">Remove</button>
             </form>
 
+                    <!-- buy now  -->
             <form method="POST" action="/testphp/buy_now.php">
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                <input type="hidden" name="name" value="<?php echo $row['product_name']; ?>">
+                <input type="hidden" name="price" value="<?php echo $row['price'] * $row['quantity']; ?>">
+                <input type="hidden" name="img" value="image/<?php echo $row['image']; ?>.jpg">
+                <input type="hidden" name="quantity" value="<?php echo $row['quantity']; ?>">
                 <button class="buy-btn">Buy Now</button>
             </form>
         </div>

@@ -41,9 +41,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("issssss", $user_id, $name, $state, $city, $pincode, $area, $landmark);
 
     if($stmt->execute()){
-        echo "Address saved/updated successfully!";
-        // redirect to next page if needed
-        // header("Location: ../buy_now.php");
+        //change it
+        header("Location: ../main.php");
         exit();
     } else {
         echo "Error: " . $stmt->error;

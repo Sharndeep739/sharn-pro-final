@@ -83,7 +83,7 @@ $cart_id = $_GET['cart_id'] ?? '';
     <input type="text" name="landmark" placeholder="Famous shop" required
            value="<?php echo htmlspecialchars($prefill['landmark']); ?>">
 
-    <button type="submit">SAVE</button>
+    <button type="submit" onclick="saveAddress()" >SAVE</button>
 </form>
 </div>
        <div class="total_price" id="totalPrice">
@@ -96,5 +96,13 @@ $cart_id = $_GET['cart_id'] ?? '';
 </div>
 
 </div>
+<script src="script/buy_now.js"></script>
 </body>
+<?php if(isset($_GET['move'])){ ?>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+    document.querySelector(".container").classList.add("move-left");
+});
+</script>
+<?php } ?>
 </html>

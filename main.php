@@ -16,12 +16,41 @@ include "actions/cart_count.php";
     <body>
         <header>
             <div class="username">
-                <i class="fa-solid fa-pizza-slice"></i>
+                <img id="mainAvatar" src="image/avatar/<?php echo $_SESSION['avatar'] ?? 'avatar1.png'; ?>" class="avatar" onclick="openPanel()">
                 <pre> Hi,</pre>
                 <div id="nameU">
                     <?php echo htmlspecialchars($_SESSION['username']); ?>
                 </div>
             </div>
+
+            <!-- profile panle  -->
+            <div id="profilePanel" class="profile-panel">
+                <p><?php echo $_SESSION['username']; ?></p>
+
+            <img id="userAvatar" src="image/avatar/<?php echo $_SESSION['avatar'] ?? 'avatar1.png'; ?>" class="avatar-big">
+
+            <button onclick="toggleAvatarEdit()">Edit Avatar</button>
+
+            <div id="avatarSelect" class="avatar-select">
+
+                <img src="image/avatar/avatar1.png" onclick="setAvatar('avatar1.png')">
+                <img src="image/avatar/avatar2.png" onclick="setAvatar('avatar2.png')">
+                <img src="image/avatar/avatar3.png" onclick="setAvatar('avatar3.png')">
+                <img src="image/avatar/avatar4.png" onclick="setAvatar('avatar4.png')">
+                <img src="image/avatar/avatar5.png" onclick="setAvatar('avatar5.png')">
+                <img src="image/avatar/avatar6.png" onclick="setAvatar('avatar6.png')">
+                <img src="image/avatar/avatar7.png" onclick="setAvatar('avatar7.png')">
+                <img src="image/avatar/avatar8.png" onclick="setAvatar('avatar8.png')">
+                <img src="image/avatar/avatar9.png" onclick="setAvatar('avatar9.png')">
+
+                 </div>
+
+                <a href="store.php">Store</a>
+                <a href="carts.php">MY Cart</a>
+                <a href="myorder.php">MY Order</a>
+                <a href="actions/logout.php">Logout</a>
+                </div>
+
             <div class="nav">
                 <input type="search" id="searchBar" placeholder="Search">
                 <a href="main.php"><div id="home">Home</div></a>

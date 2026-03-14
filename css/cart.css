@@ -4,10 +4,11 @@
     padding: 0;
 }
 body{
-    background: 
+    background-color: #fff8ee;
+    /* background: 
         radial-gradient(circle at 80% 20%, rgb(255, 255, 255) 0%, transparent 40%),
         radial-gradient(circle at 20% 80%, rgba(240, 184, 184, 0.925) 0%, transparent 45%),
-        linear-gradient(135deg, #ffd4af 0%, #ffeed9 50%, #ffffff 100%);
+        linear-gradient(135deg, #ffd4af 0%, #ffeed9 50%, #ffffff 100%); */
 }
 header{
     height: 70px;
@@ -27,10 +28,15 @@ header{
     align-items: center;
     
 }
-.username i {
-    font-size: 23px;
-    font-weight: 600;
+.username .avatar {
+    width: 40px;
+    height: 40px;
     margin-left: 30px;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 50%;
+}
+.username .avatar:hover{
+    cursor: pointer;
 }
 .username pre {
     font-size: 23px;
@@ -39,6 +45,64 @@ header{
 .username div{
     font-size: 23px;
     font-weight: 600;
+}
+.profile-panel{
+    position: fixed;
+    top:0;
+    left:-290px;
+    width:250px;
+    height:100%;
+    background:white;
+    box-shadow:2px 0px 10px rgba(0,0,0,0.2);
+    padding:20px;
+    transition:0.3s;
+    text-align: center;
+}
+.profile-panel p{
+    font-size: 40px;
+}
+.avatar-big{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    display:block;
+    margin:2px auto;
+    border: 6px solid rgb(176, 176, 176);
+}
+.avatar-select{
+    display:none;
+    margin-top:10px;
+}
+
+.avatar-select img{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    margin:5px;
+    cursor:pointer;
+    
+}
+.profile-panel button{
+    margin-top: 10px;
+}
+.profile-panel a{
+    height: 40px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   text-decoration: none;
+   color: black;
+}
+.profile-panel a:hover{
+    cursor: pointer;
+    background-color: #9c9c9c;
+}
+
+
+.profile-panel.active{
+    z-index: 3;
+    left:0;
 }
 
 .nav{

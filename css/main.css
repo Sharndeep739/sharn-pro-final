@@ -4,10 +4,11 @@
     padding: 0;
 }
 body{
-    background: 
+    background-color: #fff8ee;
+    /* background: 
         radial-gradient(circle at 80% 20%, rgb(255, 255, 255) 0%, transparent 40%),
         radial-gradient(circle at 20% 80%, rgba(240, 184, 184, 0.925) 0%, transparent 45%),
-        linear-gradient(135deg, #ffd4af 0%, #ffeed9 50%, #ffffff 100%);
+        linear-gradient(135deg, #ffd4af 0%, #ffeed9 50%, #ffffff 100%); */
 }
 header{
     height: 70px;
@@ -274,7 +275,6 @@ header{
     right: 200px;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
-    
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -304,7 +304,7 @@ header{
     /* border: 2px solid blue; */
     position: relative;
     right: -49px;
-    top: -40px;
+    top: -10px;
 }
 
 
@@ -319,7 +319,15 @@ header{
     margin-left: 40px;
 }
 
-.slide #slide1 #conter_slide1 pre,p{
+.slide #slide1 #conter_slide1 pre{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 70px;
+    display: inline-block;
+    
+}
+.slide #slide1 #conter_slide1 p{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 70px;
     font-weight: 500;
@@ -612,54 +620,91 @@ background-image: url("../image/indian/Paneer\ Butter\ Masala\ Recipe\ Ever!.jpg
 
 
 /* footer */
-footer{
-    height: 350px;
-    width: 100%;
-    position: relative;
-    top: 130px;
-    background-color: rgb(5, 5, 5);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    color: #f6efe8;
-}
+/* footer */
 
-footer #box{
-    height: 100%;
-    width: 200px;
-    display: grid;
-    grid-row: 1;
-}
-footer h3{
-
-    height: 20px;
-    font-weight: 300;
-    text-align: center;
-    margin: 30px 0 0 0;
-}
-footer pre{
-    height: 40px;
-    width: 96%;
-    text-align: center;
-
-
-}
-footer #social_link{
-    height: 200px;
-    width: 90%;
-}
-footer h2{
-    font-weight: 300;
-    font-size: 20px;
-    text-align: center;
-}
-
-footer i{
-    font-size: 28px;
-    margin :10px 0 0 20px;
+.footer{
+    background: black;
     color: white;
+    padding: 50px 0;
+    position: relative;
+    top:130px;
 }
 
+.footer-container{
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+/* footer columns */
+
+.footer-box{
+    width:20%;
+    padding:0 19px;
+}
+
+/* vertical divider line */
+
+.footer-box:not(:last-child){
+    border-right:1px solid #444;
+}
+
+/* heading */
+
+.footer-box h3{
+    margin-bottom:15px;
+    padding-bottom:8px;
+    border-bottom:1px solid #444;
+}
+
+/* list */
+
+.footer-box ul{
+    list-style:none;
+    padding:0;
+}
+
+.footer-box ul li{
+    margin:8px 0;
+    cursor:pointer;
+}
+.footer-box p{
+    padding-top: 10px;
+}
+
+.footer-box ul li:hover{
+    color:orange;
+}
+
+/* social */
+
+.social a{
+    display:inline-block;
+    margin-right:10px;
+    text-decoration:none;
+    color:white;
+    padding:6px 10px;
+    border-radius:5px;
+}
+.social i{
+    font-size: 30px;
+}
+.social a:hover{
+    background:white;
+    color:black;
+}
+
+/* bottom text */
+
+.footer-bottom{
+    text-align:center;
+    border-top:1px solid #333;
+    margin-top:40px;
+    padding-top:20px;
+    font-size:14px;
+}
 
 
 

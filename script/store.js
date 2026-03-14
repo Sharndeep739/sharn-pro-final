@@ -17,7 +17,7 @@ document.getElementById("searchBar").addEventListener("keyup", function(){
 
 });
 
-//filter funtions
+//filter funtions price fillter
 const filterBtn = document.getElementById("filterBtn");
 
 filterBtn.addEventListener("click", function(){
@@ -38,12 +38,41 @@ filterBtn.addEventListener("click", function(){
     });
 
 });
+//ctogiry filter
+document.getElementById("categoryFilter").addEventListener("change", function(){
 
+    let selected = this.value.toLowerCase();
+    let items = document.querySelectorAll(".food_cart");
+
+    items.forEach(function(item){
+
+        let category = item.dataset.category;
+
+        if(selected === "all" || category === selected){
+            item.style.display = "";
+        }else{
+            item.style.display = "none";
+        }
+
+    });
+
+});
 
 //recover
 
 document.querySelectorAll(".to_cart").forEach(button => {
     button.addEventListener("click", function() {
+
+        //toste
+
+
+        let toast = document.getElementById("toast");
+
+        toast.classList.add("show");
+
+        setTimeout(()=>{
+            toast.classList.remove("show");
+        },2000);
 
         let parent = this.closest(".food_cart");
 

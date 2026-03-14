@@ -67,6 +67,7 @@ include "actions/cart_count.php";
             </div>
         
     </header>
+    <div id="toast">Item added successfully to cart</div>
     <main>
         <div class="filter">
             <label id="lable_price">Min Price: </label>
@@ -77,11 +78,22 @@ include "actions/cart_count.php";
 
             <button id="filterBtn">Apply Filter</button>
 
+            <select id="categoryFilter">
+        <option value="all">All Food</option>
+        <option value="indian">Indian</option>
+        <option value="korean">Korean</option>
+        <option value="japanese">Japanese</option>
+            </select>
         </div>
+        
 
 
         <div class="food_grid">
-            <div class="food_cart" data-price="120" id="Burger" data-image="indian/crack\ burgers">
+            <div class="food_cart" 
+            data-price="120"
+            id="Burger" 
+            data-category="indian"
+            data-image="indian/crack\ burgers">
                 <!-- img -->
 
                 <div class="img_box img1 "></div>
@@ -102,7 +114,10 @@ include "actions/cart_count.php";
                 </div>
             </div>
         
-            <div class="food_cart" data-price="150" id="Miso Soup" data-image="japneses/Amazing\ Miso\ Soup_\ A\ Delicious\ Comforting\ Classic">
+            <div class="food_cart" data-price="150"
+            data-category="japanese"        
+            id="Miso Soup" 
+            data-image="japneses/Amazing\ Miso\ Soup_\ A\ Delicious\ Comforting\ Classic">
 
                 <div class="img_box img2"></div>
                 <!-- detail -->
@@ -122,7 +137,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="280" id="Bulgogi" data-image="korean/Bulgogi\ \(Spicy\ Bulgogi\)">
+            <div class="food_cart"
+             data-price="280" 
+             data-category="korean"
+             id="Bulgogi" 
+             data-image="korean/Bulgogi\ \(Spicy\ Bulgogi\)">
                 <div class="img_box img3"></div>
                 <!-- detail -->
 
@@ -141,7 +160,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="140" id="Samosa" data-image="indian/Crispy\ Aloo\ Samosa">
+            <div class="food_cart" 
+            data-price="140" 
+            data-category="indian"
+            id="Samosa" 
+            data-image="indian/Crispy\ Aloo\ Samosa">
                 <div class="img_box img4"></div>
                 <!-- detail -->
 
@@ -160,7 +183,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="90" id="Egg Sandwich" data-image="japneses/Egg\ Salad\ Sandwich">
+            <div class="food_cart" 
+            data-price="90" 
+            data-category="japanese"
+            id="Egg Sandwich" 
+            data-image="japneses/Egg\ Salad\ Sandwich">
                 <div class="img_box img5"></div>
                 <!-- detail -->
 
@@ -179,7 +206,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="260" id="Japchae" data-image="korean/Japchae">
+            <div class="food_cart" 
+            data-price="260" 
+            data-category="korean"
+            id="Japchae" 
+            data-image="korean/Japchae">
                 <div class="img_box img6"></div>
                 <!-- detail -->
 
@@ -198,7 +229,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="80" id="Dosa" data-image="indian/dosa\ on">
+            <div class="food_cart"
+             data-price="80" 
+             data-category="indian"
+             id="Dosa" 
+             data-image="indian/dosa\ on">
                 <div class="img_box img7"></div>
                 <!-- detail -->
 
@@ -217,7 +252,10 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="220" id="Kimbap" data-image="korean/Kimbap">
+            <div class="food_cart" 
+            data-price="220" 
+            data-category="korean"
+            id="Kimbap" data-image="korean/Kimbap">
                 <div class="img_box img8"></div>
                 <!-- detail -->
 
@@ -236,7 +274,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="250" id="Japnese Curry" data-image="japneses/Japanese\ Curry\ on\ Rice">
+            <div class="food_cart" 
+            data-price="250" 
+            data-category="japanese"
+            id="Japnese Curry" 
+            data-image="japneses/Japanese\ Curry\ on\ Rice">
                 <div class="img_box img9"></div>
                 <!-- detail -->
 
@@ -255,7 +297,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="90" id="Gulab Jaman" data-image="indian/Gulab\ Jamun!\ Indian\ Dessert\ Recipes\ _\ Sweets\ _\ Desserts">
+            <div class="food_cart" 
+            data-price="90" 
+            data-category="indian"
+            id="Gulab Jaman" 
+            data-image="indian/Gulab\ Jamun!\ Indian\ Dessert\ Recipes\ _\ Sweets\ _\ Desserts">
                 <div class="img_box img10"></div>
                 <!-- detail -->
 
@@ -274,7 +320,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="120" id="Kimchi" data-image="korean/kimchi">
+            <div class="food_cart" 
+            data-price="120" 
+            data-category="korean"
+            id="Kimchi" 
+            data-image="korean/kimchi">
                 <div class="img_box img11"></div>
                 <!-- detail -->
 
@@ -293,7 +343,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="180" id="Melonpan" data-image="japneses/melonpan">
+            <div class="food_cart" 
+            data-price="180" 
+            data-category="japanese"
+            id="Melonpan" 
+            data-image="japneses/melonpan">
                 <div class="img_box img12"></div>
                 <!-- detail -->
 
@@ -312,7 +366,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="200" id="Paneer Butter" data-image="indian/Paneer\ Butter\ Masala\ Recipe\ Ever!">
+            <div class="food_cart" 
+            data-price="200" 
+            data-category="indian"
+            id="Paneer Butter" 
+            data-image="indian/Paneer\ Butter\ Masala\ Recipe\ Ever!">
                 <div class="img_box img13"></div>
                 <!-- detail -->
 
@@ -331,7 +389,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="240" id="Mandu" data-image="korean/Mandu\ with\ Sweet\ Soy\ Drizzle">
+            <div class="food_cart" 
+            data-price="240" 
+            data-category="korean"
+            id="Mandu" 
+            data-image="korean/Mandu\ with\ Sweet\ Soy\ Drizzle">
                 <div class="img_box img14"></div>
                 <!-- detail -->
 
@@ -350,7 +412,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="160" id="MOCHI" data-image="japneses/MOCHI\ 3D">
+            <div class="food_cart" 
+            data-price="160" 
+            data-category="japanese"
+            id="MOCHI" 
+            data-image="japneses/MOCHI\ 3D">
                 <div class="img_box img15"></div>
                 <!-- detail -->
 
@@ -369,7 +435,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="150" id="Pav Bhaji " data-image="indian/Pav\ Bhaji\ Food">
+            <div class="food_cart" 
+            data-price="150" 
+            data-category="indian"
+            id="Pav Bhaji " 
+            data-image="indian/Pav\ Bhaji\ Food">
                 <div class="img_box img16"></div>
                 <!-- detail -->
 
@@ -388,7 +458,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="300" id="Ramen" data-image="korean/Ramen\ Noodles\ \(Vegan\ Recipe\)">
+            <div class="food_cart" 
+            data-price="300" 
+            data-category="korean"
+            id="Ramen" 
+            data-image="korean/Ramen\ Noodles\ \(Vegan\ Recipe\)">
                 <div class="img_box img17"></div>
                 <!-- detail -->
 
@@ -407,7 +481,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="260" id="Okonomiyaki" data-image="japneses/Okonomiyaki\ ">
+            <div class="food_cart" 
+            data-price="260" 
+            data-category="korean"
+            id="Okonomiyaki" 
+            data-image="japneses/Okonomiyaki\ ">
                 <div class="img_box img18"></div>
                 <!-- detail -->
 
@@ -426,7 +504,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="350" id="Pizza" data-image="indian/pizza">
+            <div class="food_cart" 
+            data-price="350" 
+            data-category="indian"
+            id="Pizza" 
+            data-image="indian/pizza">
                 <div class="img_box img19"></div>
                 <!-- detail -->
 
@@ -445,7 +527,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="320" id="Soondubu Jjigae" data-image="korean/Soondubu\ Jjigae">
+            <div class="food_cart" 
+            data-price="320" 
+            data-category="korean"
+            id="Soondubu Jjigae" 
+            data-image="korean/Soondubu\ Jjigae">
                 <div class="img_box img20"></div>
                 <!-- detail -->
 
@@ -464,7 +550,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="180" id="Onigiri" data-image="japneses/Onigiri">
+            <div class="food_cart" 
+            data-price="180" 
+            data-category="japanese"
+            id="Onigiri" 
+            data-image="japneses/Onigiri">
                 <div class="img_box img21"></div>
                 <!-- detail -->
 
@@ -483,7 +573,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="90" id="Salted Lassi" data-image="indian/Salted\ Lassi\ -\ Indian\ Style\ Yogurt\ based\ Summer\ Beverage\ Recipe\ -\ Step\ by\ Step">
+            <div class="food_cart" 
+            data-price="90" 
+            data-category="indian"
+            id="Salted Lassi" 
+            data-image="indian/Salted\ Lassi\ -\ Indian\ Style\ Yogurt\ based\ Summer\ Beverage\ Recipe\ -\ Step\ by\ Step">
                 <div class="img_box img22"></div>
                 <!-- detail -->
 
@@ -502,7 +596,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="250" id="Tteokbokki" data-image="korean/Tteokbokki\ with\ Boiled\ Eggs">
+            <div class="food_cart"
+            data-price="250" 
+            data-category="korean"
+            id="Tteokbokki" 
+            data-image="korean/Tteokbokki\ with\ Boiled\ Eggs">
                 <div class="img_box img23"></div>
                 <!-- detail -->
 
@@ -521,7 +619,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="400" id="Sushi" data-image="japneses/Sushi\ dinner">
+            <div class="food_cart" 
+            data-price="400" 
+            data-category="japanese"
+            id="Sushi" 
+            data-image="japneses/Sushi\ dinner">
                 <div class="img_box img24"></div>
                 <!-- detail -->
 
@@ -540,7 +642,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="120" id="Sambar" data-image="indian/Sambar\ Powder\ Recipe">
+            <div class="food_cart"
+             data-price="120" 
+             data-category="indian"
+             id="Sambar" 
+             data-image="indian/Sambar\ Powder\ Recipe">
                 <div class="img_box img25"></div>
                 <!-- detail -->
 
@@ -559,7 +665,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="220" id="Tteokguk" data-image="korean/Tteokguk\ \(Korean\ Rice\ Cake\ Soup\)\ -\ Beyond\ Kimchee">
+            <div class="food_cart" 
+            data-price="220" 
+            data-category="korean"
+            id="Tteokguk" 
+            data-image="korean/Tteokguk\ \(Korean\ Rice\ Cake\ Soup\)\ -\ Beyond\ Kimchee">
                 <div class="img_box img26"></div>
                 <!-- detail -->
 
@@ -578,7 +688,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="280" id="Takoyaki" data-image="japneses/Takoyaki">
+            <div class="food_cart" 
+            data-price="280" 
+            data-category="japanese"
+            id="Takoyaki" 
+            data-image="japneses/Takoyaki">
                 <div class="img_box img27"></div>
                 <!-- detail -->
 
@@ -597,7 +711,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="300" id="Subway Sandwiches" data-image="indian/Subway\ Sandwiches\,\ According\ to\ Dietitians">
+            <div class="food_cart" 
+            data-price="300" 
+            data-category="indian"
+            id="Subway Sandwiches" 
+            data-image="indian/Subway\ Sandwiches\,\ According\ to\ Dietitians">
                 <div class="img_box img28"></div>
                 <!-- detail -->
 
@@ -616,7 +734,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="350" id="𝗕𝗶𝗯𝗶𝗺𝗯𝗮𝗽" data-image="korean/𝗕𝗶𝗯𝗶𝗺𝗯𝗮𝗽\ \(𝗞𝗼𝗿𝗲𝗮𝗻\ 𝗠𝗶𝘅𝗲𝗱\ 𝗥𝗶𝗰𝗲\ 𝗕𝗼𝘄𝗹\)">
+            <div class="food_cart" 
+            data-price="350" 
+            data-category="korean"
+            id="𝗕𝗶𝗯𝗶𝗺𝗯𝗮𝗽" 
+            data-image="korean/𝗕𝗶𝗯𝗶𝗺𝗯𝗮𝗽\ \(𝗞𝗼𝗿𝗲𝗮𝗻\ 𝗠𝗶𝘅𝗲𝗱\ 𝗥𝗶𝗰𝗲\ 𝗕𝗼𝘄𝗹\)">
                 <div class="img_box img29"></div>
                 <!-- detail -->
 
@@ -635,7 +757,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="370" id="Tonkatsu" data-image="japneses/tonkatsu">
+            <div class="food_cart" 
+            data-price="370"
+            data-category="japanese" 
+            id="Tonkatsu" 
+            data-image="japneses/tonkatsu">
                 <div class="img_box img30"></div>
                 <!-- detail -->
 
@@ -654,7 +780,11 @@ include "actions/cart_count.php";
                 </div>
 
             </div>
-            <div class="food_cart" data-price="100" id="Idli" data-image="indian/Yummy\ Rawa\ Idli\ from\ Diksha\'s\ Cafe">
+            <div class="food_cart" 
+            data-price="100" 
+            data-category="indian"
+            id="Idli" 
+            data-image="indian/Yummy\ Rawa\ Idli\ from\ Diksha\'s\ Cafe">
                 <div class="img_box img31"></div>
                 <!-- detail -->
 
@@ -849,9 +979,65 @@ include "actions/cart_count.php";
             <!-- add more cart here -->
         </div>
     </main>
-    <footer>
+    <footer class="footer">
 
-    </footer>
+<div class="footer-container">
+
+    <div class="footer-box">
+        <h3>Contact Us</h3>
+        <ul>
+            <li>About Us</li>
+            <li>Team</li>
+            <li>Careers</li>
+            <li>Support</li>
+        </ul>
+
+        <p>📧 info@cuisinecraft.com</p>
+        <p>📞 +91 7814149127</p>
+    </div>
+
+
+    <div class="footer-box">
+        <h3>Available In</h3>
+        <ul>
+            <li>Delhi</li>
+            <li>Mumbai</li>
+            <li>Pune</li>
+            <li>Punjab</li>
+            <li>Hyderabad</li>
+            <li>Gurgaon</li>
+        </ul>
+    </div>
+
+
+    <div class="footer-box">
+        <h3>Life at CuisineCraft</h3>
+        <ul>
+            <li>News</li>
+            <li>Explore White Craft</li>
+        </ul>
+    </div>
+
+
+    <div class="footer-box">
+        <h3>Follow Us</h3>
+
+        <div class="social">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer-bottom">
+    <p>© 2024 CuisineCraft. All Rights Reserved | Privacy Policy | Terms of Service</p>
+</div>
+
+</footer>
     <script src="script/store.js"></script>
 </body>
 </html>

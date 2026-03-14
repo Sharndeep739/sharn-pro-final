@@ -191,9 +191,9 @@ main{
 .login_register #register input{
     height: 40px;
     width: 300px;
-    border-radius: 20px;
-    background-color: #e9ceae;
+    border-radius: 5px;
     border: none;
+    filter: drop-shadow(0px 0px 1px);
     font-size: 15px;
 }
 .login_register #register input::placeholder{
@@ -217,9 +217,9 @@ main{
 .login_register #login input{
     height: 40px;
     width: 300px;
-    border-radius: 20px;
+    border-radius: 5px;
     border: none;
-    background-color: #e9ceae;
+    filter: drop-shadow(0px 0px 1px);
     font-size: 15px;
 }
 .login_register #login input::placeholder{

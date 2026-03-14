@@ -156,11 +156,15 @@ include "actions/cart_count.php";
                         <pre>North Indian, Punjabi, Main Course
                         </pre>
                     </div>
-                    <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                    <a href="store.php"><button class="to_cart_btn">Explore</button></a>
                 </div>
+
                 <div class="item">
-                    <div id="imgs" class="imgs2">
-                    </div>
+
+                    <!-- img -->
+
+                    <div id="imgs" class="imgs2"></div>
+
                     <div id="text">
                         <h2>₹220/- with 50% off</h2>
                         <h3>Okonomiyaki</h3>
@@ -168,7 +172,7 @@ include "actions/cart_count.php";
                         <pre>Japanese, Street Food, Savory Pancake
                         </pre>
                     </div>
-                    <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                    <a href="store.php"><button class="to_cart_btn">Explore</button></a>
                     
                 </div>
                 <div class="item">
@@ -181,7 +185,7 @@ include "actions/cart_count.php";
                         <pre>Korean, Fermented, Side Dish
                         </pre>
                     </div>
-                    <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                    <a href="store.php"><button class="to_cart_btn">Explore</button></a>
                     
                 </div>
                 <div class="item">
@@ -194,7 +198,7 @@ include "actions/cart_count.php";
                         <pre>Italian, Fast Food, Baked
                         </pre>
                     </div>
-                    <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                    <a href="store.php"><button class="to_cart_btn">Explore</button></a>
                     
                     
                 </div>
@@ -208,7 +212,7 @@ include "actions/cart_count.php";
                         <pre>Sandwiches, Fast Food, Healthy
                         </pre>
                     </div>
-                    <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                    <a href="store.php"><button class="to_cart_btn">Explore</button></a>
                     
                     
                 </div>
@@ -222,7 +226,7 @@ include "actions/cart_count.php";
                         <pre>Japanese, Street Food, Seafood
                         </pre>
                     </div>
-                    <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                    <a href="store.php"><button class="to_cart_btn">Explore</button></a>
                     
                     
                 </div>
@@ -236,7 +240,7 @@ include "actions/cart_count.php";
                     <pre>Japanese, Fried, Main Course
                     </pre>
                 </div>
-                <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                <a href="store.php"><button class="to_cart_btn">Explore</button></a>
                 
                 
             </div>
@@ -250,7 +254,7 @@ include "actions/cart_count.php";
                     <pre>Korean, Rice Rolls, Street Food
                     </pre>
                 </div>
-                <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                <a href="store.php"><button class="to_cart_btn">Explore</button></a>
                 
                 
             </div>
@@ -264,7 +268,7 @@ include "actions/cart_count.php";
                     <pre>Korean, Rice Bowl, Healthy
                     </pre>
                 </div>
-                <a href="carts.html"><button class="to_cart_btn">Add to cart</button></a>
+                <a href="store.php"><button class="to_cart_btn">Explore</button></a>
                 
                 
             </div>
@@ -272,36 +276,65 @@ include "actions/cart_count.php";
         </div>
     </main>
     
-    <footer>
-        <div id="box">
-            <h3>Contact us:</h3>
-            <pre>About us</pre>
-            <pre>Team</pre>
-            <pre>Careers</pre>
+    <footer class="footer">
+
+<div class="footer-container">
+
+    <div class="footer-box">
+        <h3>Contact Us</h3>
+        <ul>
+            <li>About Us</li>
+            <li>Team</li>
+            <li>Careers</li>
+            <li>Support</li>
+        </ul>
+
+        <p>📧 info@cuisinecraft.com</p>
+        <p>📞 +91 7814149127</p>
+    </div>
+
+
+    <div class="footer-box">
+        <h3>Available In</h3>
+        <ul>
+            <li>Delhi</li>
+            <li>Mumbai</li>
+            <li>Pune</li>
+            <li>Punjab</li>
+            <li>Hyderabad</li>
+            <li>Gurgaon</li>
+        </ul>
+    </div>
+
+
+    <div class="footer-box">
+        <h3>Life at CuisineCraft</h3>
+        <ul>
+            <li>News</li>
+            <li>Explore White Craft</li>
+        </ul>
+    </div>
+
+
+    <div class="footer-box">
+        <h3>Follow Us</h3>
+
+        <div class="social">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
-        <div id="box">
-            <h3>Available in:</h3>
-            <pre>Delhi</pre>
-            <pre>Mumbai</pre>
-            <pre>Pune</pre>
-            <pre>Punjab</pre>
-            <pre>Hyadrabad</pre>
-            <pre>gudgaon</pre>
-        </div>
-        <div id="box">
-            <h3>Life at CuisineCraft:</h3>
-            <pre>News</pre>
-            <pre>Explore Wite craft</pre>
-            <div id="social_link">
-                <h2>social link</h2>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            </div>
-            
-        </div>
-        
-    </footer>
+
+    </div>
+
+</div>
+
+<div class="footer-bottom">
+    <p>© 2024 CuisineCraft. All Rights Reserved | Privacy Policy | Terms of Service</p>
+</div>
+
+</footer>
     <script src="script/main.js"></script>
 </body>
 </html>

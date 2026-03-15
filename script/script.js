@@ -113,3 +113,65 @@ document.getElementById("login").addEventListener("submit", function(e) {
         console.error(error);
     });
 });
+
+// otp
+document.getElementById("sendOtp").addEventListener("click", function(){
+
+let phone = document.querySelector("input[name='phone']").value;
+
+if(phone.length != 10){
+alert("Enter valid phone number");
+return;
+}
+
+fetch("actions/send_otp.php", {
+method: "POST",
+headers: {
+"Content-Type": "application/x-www-form-urlencoded"
+},
+body: "phone="+phone
+})
+.then(res => res.text())
+.then(data => {
+
+alert("OTP Sent ✅");
+
+document.getElementById("otpBox").style.display="flex";
+
+});
+
+});
+
+// verify button hsow
+document.getElementById("verifyOtp").addEventListener("click", function(){
+
+let otp = document.getElementById("otp").value;
+
+fetch("actions/verify_otp.php",{
+method:"POST",
+headers:{
+"Content-Type":"application/x-www-form-urlencoded"
+},
+body:"otp="+otp
+})
+.then(res => res.text())
+.then(data => {
+
+if(data.trim() === "success"){
+
+alert("OTP Verified ✅");
+document.getElementById("sendOtp").style.display="none";
+document.getElementById("verifyOtp").style.display="none";
+document.getElementById("submitBtn").style.display="block";
+
+}else{
+
+alert("Wrong OTP ❌");
+
+}
+
+});
+
+});
+
+

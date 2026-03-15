@@ -160,8 +160,8 @@ main{
     align-items: center;
 }
 .login_register #buttons_div button{
-    height: 40px;
-    width: 150px;
+    height: 30px;
+    width: 130px;
     border: none;
     border-radius: 20px;
     margin: 0 4px 0 4px;
@@ -189,15 +189,25 @@ main{
 
 
 .login_register #register input{
-    height: 40px;
-    width: 300px;
+    height: 30px;
+    width: 260px;
     border-radius: 5px;
     border: none;
     filter: drop-shadow(0px 0px 1px);
     font-size: 15px;
+    margin-top: 5px;
 }
 .login_register #register input::placeholder{
     padding: 10px;
+}
+.login_register #register #otpBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login_register #register #otpBox button{
+    height: 30px;
 }
 
 
@@ -232,10 +242,11 @@ main{
     height: 40px;
     width: 130px;
     border-radius: 20px;
-    background: rgba(107, 129, 221, 0.995);;
+    background: rgba(46, 125, 58, 0.995);;
     border: none;
     cursor: pointer;
     font-size: 20px;
+    margin-top: 5px;
     
 }
 

@@ -52,8 +52,19 @@
                 <input type="password" name="password" placeholder="Set password" required>
                 <input type="password" name="confirm_password" placeholder="Confirm password" required>
                 <input type="email" name="email" placeholder="Email" required>
-                <input type="number" name="phone" placeholder="Phone Number" required>
-                <button type="submit">Submit</button>
+                <input type="number" name="phone" id="phone" placeholder="Phone Number" required>
+                <button type="button" id="sendOtp">Send OTP</button>
+
+                
+                <div id="otpBox" style="display:none;">
+                    
+                    <input type="text" id="otp" placeholder="Enter OTP">
+                    
+                    <button type="button" id="verifyOtp">Verify OTP</button>
+                    
+                </div>
+
+                    <button type="submit" id="submitBtn" style="display:none;">Submit</button>
                 
             </form>
             <form id="login" >

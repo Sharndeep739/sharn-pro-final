@@ -3,56 +3,53 @@ session_start();
 include 'db.php';
 
 if(!isset($_SESSION['user_id'])){
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $user_id = $_SESSION['user_id'];
-    $cart_id = $_POST['cart_id'] ?? '';
-    $name = $_POST['name'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $state = $_POST['state'] ?? '';
-    $city = $_POST['city'] ?? '';
-    $pincode = $_POST['pincode'] ?? '';
-    $area = $_POST['area'] ?? '';
-    $landmark = $_POST['landmark'] ?? '';
+$user_id = $_SESSION['user_id'];
+$payment_method = $_POST['payment_method'];
+$order_state = "Pending";
 
-    // Validate required fields
-    if(empty($name) || empty($phone) || empty($state) || empty($city) || empty($pincode) || empty($area) || empty($landmark)){
-        echo "All fields are required!";
-        exit();
-    }
+$names = $_POST['item_name'];
+$prices = $_POST['price'];
+$qtys = $_POST['quantity'];
+$imgs = $_POST['img'];
 
-    // Insert or update existing row for this user_id
-    $stmt = $conn->prepare("
-        INSERT INTO user_addresses (user_id, name, state, city, pincode, area, landmark)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-        ON DUPLICATE KEY UPDATE
-            name = VALUES(name),
-            state = VALUES(state),
-            city = VALUES(city),
-            pincode = VALUES(pincode),
-            area = VALUES(area),
-            landmark = VALUES(landmark)
-    ");
+for($i=0; $i<count($names); $i++){
 
-    $stmt->bind_param("issssss", $user_id, $name, $state, $city, $pincode, $area, $landmark);
+    $name = $names[$i];
+    $price = $prices[$i];
+    $quantity = $qtys[$i];
+    $image = $imgs[$i];
 
-    if($stmt->execute()){
-        //change it
-        header("Location: ../main.php");
-        exit();
-    } else {
-        echo "Error: " . $stmt->error;
-        exit();
-    }
-
-    $stmt->close();
-    $conn->close();
-} else {
-    echo "Invalid access!";
-    exit();
+if(!str_contains($image,'.jpg')){
+    $image = $image . '.jpg';
 }
+if(!str_contains($image,'image/')){
+    $image= 'image/' . $image;
+}
+
+    $sql = "INSERT INTO order_items
+    (user_id,item_name,price,quantity,image,payment_method,order_state)
+    VALUES
+    ('$user_id','$name','$price','$quantity','$image','$payment_method','$order_state')";
+
+    mysqli_query($conn,$sql);
+}
+
+# CART CLEAN
+// mysqli_query($conn,"DELETE FROM cart WHERE user_id='$user_id'");
+
+// clean sesstion
+unset($_SESSION['checkout_items']);
+unset($_SESSION['item_name']);
+unset($_SESSION['price']);
+unset($_SESSION['quantity']);
+unset($_SESSION['img']);
+
+# SUCCESS PAGE
+header("Location: ../myorder.php");
+exit();
 ?>

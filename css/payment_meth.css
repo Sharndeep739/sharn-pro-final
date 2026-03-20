@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.payment-container {
+    display: flex;
+    max-width: 900px;
+    margin: 50px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.left-side, .right-side {
+    padding: 25px;
+}
+
+.left-side {
+    flex: 1;
+    background-color: #e6f0ff; /* soft blue background for trust vibe */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-side img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-side h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.payment-option:hover:not(.disabled) {
+    border-color: #007bff;
+    box-shadow: 0 3px 8px rgba(0,123,255,0.2);
+}
+
+.payment-option.disabled {
+    background-color: #f0f0f0;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.payment-option input {
+    cursor: pointer;
+}
+
+.place-order {
+    padding: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+.place-order:hover {
+    background-color: #0056b3;
+}

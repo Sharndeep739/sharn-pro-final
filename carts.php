@@ -121,13 +121,13 @@ if(isset($_SESSION['user_id'])){
             </div>
 
             <!-- remove item -->
-            <form method="POST" action="/testphp/actions/remove.php">
+            <form method="POST" action="actions/remove.php">
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                 <button class="remove-btn">Remove</button>
             </form>
 
                     <!-- buy now  -->
-            <form method="POST" action="/testphp/buy_now.php">
+            <form method="POST" action="checkout.php">
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                 <input type="hidden" name="name" value="<?php echo $row['product_name']; ?>">
                 <input type="hidden" name="price" value="<?php echo $row['price'] * $row['quantity']; ?>">
@@ -141,7 +141,9 @@ if(isset($_SESSION['user_id'])){
 
         <div class="total-box">
             Total Price: ₹<?php echo $grand_total; ?>
-            <button class="buy_all" type="buy_All">Buy All</button>
+             <form method="POST" action="checkout_all.php">
+                <button class="buy_all" type="submit">Buy All</button>
+             </form>
         </div>
 
     <?php } else { ?>

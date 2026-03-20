@@ -12,14 +12,14 @@ if(isset($_POST['id']) && isset($_SESSION['user_id'])) {
               AND user_id = '$user_id'";
 
     if(mysqli_query($conn, $query)){
-        header("Location: /testphp/carts.php");  // apna cart page name yahan likho
+        header("Location: ../carts.php");  // apna cart page name yahan likho
         exit();
     } else {
         echo "Error: " . mysqli_error($conn);
     }
 
 } else {
-    header("Location: /testphp/carts.php");
+    header("Location: ../carts.php");
     exit();
 }
 ?>

@@ -1,17 +1,32 @@
-<!-- <?php
+<?php
 session_start();
 include 'actions/db.php';
+$items = [];
+$total_price = 0;
+
 
 if(!isset($_SESSION['user_id'])){
     header("Location: index.php");
     exit();
 }
 if(isset($_POST['id'], $_POST['name'], $_POST['price'], $_POST['img'], $_POST['quantity'])) {
+
+    // all item unset
+    unset($_SESSION['checkout_items']);
+    unset($_SESSION['total_price']);
+
     $id = $_POST['id'];
     $name = $_POST['name'];
     $price = $_POST['price'];
     $img = $_POST['img'];
     $quantity = $_POST['quantity'];
+
+    // session data save 
+    $_SESSION['item_name'] = $name;
+    $_SESSION['price'] = $price;
+    $_SESSION['quantity'] = $quantity;
+    $_SESSION['img'] = $img;
+
 } else {
     // Agar direct visit hua, redirect kar do cart page pe
     header("Location: carts.php");
@@ -41,25 +56,24 @@ $prefill = [
 
 
 $cart_id = $_GET['cart_id'] ?? '';
-?> -->
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checkout</title>
-<link rel="stylesheet" href="css/buy_now.css">
+<link rel="stylesheet" href="css/checkout.css">
 </head>
 <body>
-<header>
-
-</header>
 
 <div class="container">
 <h2>Address</h2>
 
-<form method="POST" action="actions/place_order.php" class="checkout-form">
+<form method="POST" action="actions/save_address.php" class="checkout-form">
     <input type="hidden" name="cart_id" value="<?php echo htmlspecialchars($cart_id); ?>">
+    
+
 
  
     <input type="text" name="name" placeholder="Full Name" required
@@ -83,7 +97,7 @@ $cart_id = $_GET['cart_id'] ?? '';
     <input type="text" name="landmark" placeholder="Famous shop" required
            value="<?php echo htmlspecialchars($prefill['landmark']); ?>">
 
-    <button type="submit" onclick="saveAddress()" >SAVE</button>
+    <button type="submit" onclick="saveAddress()" >save and continue ></button>
 </form>
 </div>
        <div class="total_price" id="totalPrice">

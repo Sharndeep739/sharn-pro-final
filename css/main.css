@@ -4,7 +4,7 @@
     padding: 0;
 }
 body{
-    background-color: #fff8ee;
+    background-color: #f1efef;
     /* background: 
         radial-gradient(circle at 80% 20%, rgb(255, 255, 255) 0%, transparent 40%),
         radial-gradient(circle at 20% 80%, rgba(240, 184, 184, 0.925) 0%, transparent 45%),
@@ -375,10 +375,7 @@ header{
     position: relative;
     left: 90px;
     border-radius: 25px;
-     background: 
-        radial-gradient(circle at 80% 20%, rgb(227, 207, 178) 0%, transparent 40%),
-        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.925) 0%, transparent 45%),
-        linear-gradient(135deg, #ffd4af 0%, #ffeed9 50%, #ffffff 100%);
+     background-color: white;
 
     display: flex;
     flex-direction: row;

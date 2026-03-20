@@ -4,7 +4,7 @@
     padding: 0;
 }
 body{
-    background-color: #fff8ee;
+    background-color: #f1efef;
     /* background: 
         radial-gradient(circle at 80% 20%, rgb(255, 255, 255) 0%, transparent 40%),
         radial-gradient(circle at 20% 80%, rgba(240, 184, 184, 0.925) 0%, transparent 45%),
@@ -297,10 +297,11 @@ header{
   
 }
 .food_grid .food_cart{
-       background: 
+    background-color: rgb(255, 255, 255);
+       /* background: 
         radial-gradient(circle at 80% 20%, rgb(255, 255, 255) 0%, transparent 40%),
         radial-gradient(circle at 20% 80%, rgba(240, 222, 222, 0.925) 0%, transparent 45%),
-        linear-gradient(135deg, #e8e8e8 0%, #ffeed9 50%, #ffffff 100%);
+        linear-gradient(135deg, #e8e8e8 0%, #ffeed9 50%, #ffffff 100%); */
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 20px;
     margin-bottom: 20px;

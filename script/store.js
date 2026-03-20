@@ -81,7 +81,7 @@ document.querySelectorAll(".to_cart").forEach(button => {
         let image = parent.dataset.image;
 
         // AJAX request
-        fetch("/testphp/actions/to_cart.php", {
+        fetch("actions/to_cart.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"

@@ -40,3 +40,24 @@ function setAvatar(name){
     });
 
 }
+//traking order 
+document.querySelectorAll(".track-container").forEach(container => {
+
+let stepNumber = container.dataset.step;
+
+let steps = container.querySelectorAll(".step");
+let progress = container.querySelector(".progress-line");
+
+steps.forEach((step,index)=>{
+
+if(index < stepNumber){
+step.classList.add("active");
+}
+
+});
+
+let percent = (stepNumber-1)/(steps.length-1)*100;
+
+progress.style.width = percent + "%";
+
+});

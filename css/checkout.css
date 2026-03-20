@@ -9,26 +9,24 @@ body {
     background-attachment: fixed;
     background-position: top;
     backdrop-filter: blur(5px);
-}
-header{
-    border: 1px solid green;
-    height: 100px;
-    width: 100%;
+    padding-bottom: 50px;
 }
 
 .container { 
     width: 30%; 
     margin: 30px auto; 
-       background: 
+       /* background: 
         radial-gradient(circle at 80% 20%, rgb(255, 255, 255) 0%, transparent 40%),
         radial-gradient(circle at 20% 80%, rgba(240, 184, 184, 0.925) 0%, transparent 45%),
-        linear-gradient(135deg, #ffd4af 0%, #ffeed9 50%, #ffffff 100%);
+        linear-gradient(135deg, #ffd4af 0%, #ffeed9 50%, #ffffff 100%); */
+        background-color: white;
     padding: 25px 30px; 
     border-radius: 10px; 
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
     position: relative;
     left: 100px;
     display: inline-block;
+    border: 1px solid gray;
  }
 
 h2 { text-align: center; 
@@ -69,22 +67,25 @@ label {
 
 .total_price{
     
-    margin: 30px auto; 
-       background: 
+    margin: 30px; 
+       /* background: 
         radial-gradient(circle at 80% 20%, rgb(255, 255, 255) 0%, transparent 40%),
         radial-gradient(circle at 20% 80%, rgba(240, 184, 184, 0.925) 0%, transparent 45%),
-        linear-gradient(135deg, #ffd4af 0%, #ffeed9 50%, #ffffff 100%);
+        linear-gradient(135deg, #ffd4af 0%, #ffeed9 50%, #ffffff 100%); */
+        background-color: rgb(204, 221, 240);
     padding: 25px 30px; 
     border-radius: 10px; 
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    position: relative;
-    left: 300px;
+    position: fixed;
+    margin-left: 300px;
     display: inline-block;
     flex-direction: column;
+    border: 1px solid;
 }
 .total_price #total-img{
     width: 280px;
     border-radius: 20px;
+    height: 300px;
 }
 .total_price #total-name{
     font-size: 20px;

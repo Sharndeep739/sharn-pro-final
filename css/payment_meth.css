@@ -29,6 +29,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* font-family: 'DM Sans', sans-serif; */
+}
+body, h1, h2, h3, p, a, button, pre, div {
   font-family: 'DM Sans', sans-serif;
 }
 

@@ -50,6 +50,6 @@ unset($_SESSION['quantity']);
 unset($_SESSION['img']);
 
 # SUCCESS PAGE
-header("Location: ../myorder.php");
+header("Location: ../myorder.php?order=success");
 exit();
 ?>

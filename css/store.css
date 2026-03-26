@@ -1,712 +1,839 @@
-*{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-body{
-    background-color: #f1efef;
-    /* background: 
-        radial-gradient(circle at 80% 20%, rgb(255, 255, 255) 0%, transparent 40%),
-        radial-gradient(circle at 20% 80%, rgba(240, 184, 184, 0.925) 0%, transparent 45%),
-        linear-gradient(135deg, #ffd4af 0%, #ffeed9 50%, #ffffff 100%); */
-}
-header{
-    height: 70px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-}
-#toast{
-    position:fixed;
-    right: 30px;
-    background:#299223;
-    color:rgb(255, 255, 255);
-    padding:10px 18px;
-    border-radius:8px;
-    font-size:16px;
-    opacity:0;
-    transform:translateY(10px);
-    transition:0.3s;
-    z-index:999;
+/* =============================================
+   CuisineCraft — store.css
+   Responsive | Same UI | Better Filter
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,600&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* ---- CSS Variables ---- */
+:root {
+  --red:        #d63031;
+  --orange:     #F9A946;
+  --green:      #27ae60;
+  --dark-green: #1e8449;
+  --black:      #111111;
+  --white:      #ffffff;
+  --bg:         #f5f1ee;
+  --card-bg:    #ffffff;
+  --text-muted: #777;
+  --glass-bg:   rgba(255, 255, 255, 0.22);
+  --glass-bdr:  rgba(255, 255, 255, 0.4);
+  --blur:       blur(16px);
+  --radius-sm:  10px;
+  --radius:     18px;
+  --radius-lg:  28px;
+  --shadow-sm:  0 2px 12px rgba(0,0,0,0.10);
+  --shadow:     0 6px 28px rgba(0,0,0,0.14);
+  --shadow-lg:  0 12px 48px rgba(0,0,0,0.22);
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#toast.show{
-    opacity:1;
-    transform:translateY(0);
+/* ---- Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
 }
-.username{
-    height: 100%;
-    width: 250px;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    
+
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
+
+/* =============================================
+   HEADER
+   ============================================= */
+header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ---- Username ---- */
+.username {
+  height: 100%;
+  min-width: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
 .username .avatar {
-    width: 40px;
-    height: 40px;
-    margin-left: 30px;
-    border: 3px solid rgb(255, 255, 255);
-    border-radius: 50%;
-}
-.username .avatar:hover{
-    cursor: pointer;
-}
-.username pre {
-    font-size: 23px;
-    font-weight: 600;
-}
-.username div{
-    font-size: 23px;
-    font-weight: 600;
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--green);
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+  flex-shrink: 0;
 }
 
-.profile-panel{
-    position: fixed;
-    top:0;
-    left:-290px;
-    width:250px;
-    height:100%;
-    background:white;
-    box-shadow:2px 0px 10px rgba(0,0,0,0.2);
-    padding:20px;
-    transition:0.3s;
-    text-align: center;
-}
-.profile-panel p{
-    font-size: 40px;
-}
-.avatar-big{
-   width:100px;
-    height:100px;
-    border-radius:50%;
-    display:block;
-    margin:2px auto;
-    border: 6px solid rgb(176, 176, 176);
-}
-.avatar-select{
-    display:none;
-    margin-top:10px;
+.username .avatar:hover {
+  transform: scale(1.08);
 }
 
-.avatar-select img{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    margin:5px;
-    cursor:pointer;
-    
-}
-.profile-panel button{
-    margin-top: 10px;
-}
-.profile-panel a{
-    height: 40px;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-   align-items: center;
-   text-decoration: none;
-   color: black;
-}
-.profile-panel a:hover{
-    cursor: pointer;
-    background-color: #9c9c9c;
+.username pre,
+.username div {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--black);
+  white-space: nowrap;
 }
 
-.profile-panel.active{
-    z-index: 3;
-    left:0;
+/* ---- Profile Panel ---- */
+.profile-panel {
+  position: fixed;
+  top: 0;
+  left: -290px;
+  width: 260px;
+  height: 100%;
+  background: var(--white);
+  box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+  padding: 30px 20px 20px;
+  transition: left var(--transition);
+  text-align: center;
+  z-index: 999;
+  overflow-y: auto;
 }
 
-.nav{
-    height: 100%;
-    width: 900px;
-    position: relative;
-    left: -70px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.nav::after {
-    content: "";
-    position: absolute;
-    bottom: 13px;
-    left: 430px;
-    width: 60%;
-    height: 40px;
-    
-    background: linear-gradient(
-        to right,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.6) 50%,
-        rgba(255,255,255,0) 100%
-        );
-        
-        pointer-events: none;
-        z-index: 1;
-    }
-    .nav div{
-        height: 100%;
-        width: 100px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        font-weight: 600;
-    }
-    .nav input{
-        height: 60%;
-        width: 400px;
-        position: relative;
-        top: 15px;
-        right: 30px;
-        border-radius: 25px;
-        border: none;
-        background-color: #ffffff;
-        box-shadow: 0px 0px 300px rgba(100, 99, 99, 0.5);
-        text-align: left;
-        padding-left: 20px; 
-        outline: none;
-
-}
-.nav input::placeholder{
-    font-size: 17px;
-
+.profile-panel p {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--black);
 }
 
-.nav a{
-    text-decoration: none;
-    color: black;
-    z-index: 2;    
+.avatar-big {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: block;
+  margin: 6px auto 12px;
+  border: 4px solid #ddd;
+  object-fit: cover;
 }
 
-.nav #Store{
-    color: green;
-}
-.nav div:hover{
-    cursor: pointer;
-    text-decoration: underline;
-}
-.cart{
-    height: 40px;
-    width: 47px;
-    font-size: 25px;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    z-index: 2;
-  
-    
-}
-.cart a{
-    color: rgb(0, 0, 0);
-}
-.cart .cart-count{
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    font-size: 14px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    background-color: red;
-    position: relative;
-    top: -11px;
-    right: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    z-index: 3;
-}
-.nav .cart:hover{
-    text-decoration: none;
+.avatar-select {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
 }
 
-.cart:hover{
-    cursor: pointer;
-    
+.avatar-select img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
 }
 
-/* //main  */
-
-.filter{
-    height: 70px;
-    width: 700px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+.avatar-select img:hover {
+  border-color: var(--green);
 }
 
-.filter input{
-    border: none;
-    position: relative;
-    right: 20px;
-}
-#lable_price{
-    font-size: 17px;
-   
-}
-#minPrice,#maxPrice{
-    
-    height: 25px;
-    width: 100px;
-    border-radius: 5px;
-    border: 1px solid;
-}
-#filterBtn{
-    height: 25px;
-    width: 100px;
-    background-color: rgb(255, 255, 255);
-    font-size: 14px;
-    border: none;
-    filter: drop-shadow(0px 0px 1px);
-    position: relative;
-    right: 30px;
-}
-#filterBtn:hover{
-    cursor: pointer;
-}
-#filterBtn:active{
-    transform: scale(1.1);
+.profile-panel button {
+  margin-top: 12px;
+  padding: 8px 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: var(--bg);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background var(--transition);
 }
 
-/* //category filter */
-#categoryFilter{
-    display: inline;
-    height: 30px;
-    width: 100px;
-    background-color: white;
-    border-radius: 3px;
+.profile-panel button:hover {
+  background: #e0e0e0;
 }
 
-
-.food_grid{
-    width: 97%;
-    position: relative;
-    left: 20px;
-    display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 50px;
-  row-gap: 0px;
-  
-}
-.food_grid .food_cart{
-    background-color: rgb(255, 255, 255);
-       /* background: 
-        radial-gradient(circle at 80% 20%, rgb(255, 255, 255) 0%, transparent 40%),
-        radial-gradient(circle at 20% 80%, rgba(240, 222, 222, 0.925) 0%, transparent 45%),
-        linear-gradient(135deg, #e8e8e8 0%, #ffeed9 50%, #ffffff 100%); */
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 20px;
-    margin-bottom: 20px;
-    width: 250px;
-    height: 325px;
-
+.profile-panel a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  margin-top: 8px;
+  text-decoration: none;
+  color: var(--black);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: background var(--transition);
 }
 
-/* img box */
-.food_grid .img_box{
-    height: 200px;
-    width: 100%;
-    box-shadow: inset 0px -30px 30px black;
-    border-radius: 20px;
+.profile-panel a:hover {
+  background: var(--bg);
+  cursor: pointer;
 }
 
-.food_grid .img1{
-    background-image: url("../image/indian/crack\ burgers.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.food_grid .img2{
-    background-image: url("../image/japneses/Amazing\ Miso\ Soup_\ A\ Delicious\ Comforting\ Classic.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.food_grid .img3{
-    background-image: url("../image/korean/Bulgogi\ \(Spicy\ Bulgogi\).jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: -60px;
-}
-.food_grid .img4{
-    background-image: url("../image/indian/Crispy\ Aloo\ Samosa.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.food_grid .img5{
-    background-image: url("../image/japneses/Egg\ Salad\ Sandwich.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.food_grid .img6{
-    background-image: url("../image/korean/Japchae.jpg");
-    background-position-y: -30px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.food_grid .img7{
-    background-image: url("../image/indian/dosa\ on.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+.profile-panel.active {
+  left: 0;
 }
 
-.food_grid .img8{
-    background-image: url("../image/korean/Kimbap.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+/* ---- Nav ---- */
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  justify-content: center;
 }
 
-.food_grid .img9{
-    background-image: url("../image/japneses/Japanese\ Curry\ on\ Rice.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+.nav input {
+  height: 40px;
+  width: 320px;
+  border-radius: 25px;
+  border: 1.5px solid #e0e0e0;
+  background: var(--bg);
+  text-align: left;
+  padding-left: 18px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.food_grid .img10{
-    background-image: url("../image/indian/Gulab\ Jamun!\ Indian\ Dessert\ Recipes\ _\ Sweets\ _\ Desserts.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+.nav input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.12);
 }
 
-.food_grid .img11{
-    background-image: url("../image/korean/kimchi.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+.nav input::placeholder {
+  color: #aaa;
+  font-size: 14px;
 }
 
-.food_grid .img12{
-    background-image: url("../image/japneses/melonpan.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+.nav a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 600;
+  font-size: 15px;
+  z-index: 2;
 }
 
-.food_grid .img13{
-    background-image: url("../image/indian/Paneer\ Butter\ Masala\ Recipe\ Ever!.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+.nav div {
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  transition: background 0.2s;
+  white-space: nowrap;
 }
 
-.food_grid .img14{
-    background-image: url("../image/korean/Mandu\ with\ Sweet\ Soy\ Drizzle.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+.nav a:hover div {
+  background: var(--bg);
+  text-decoration: none;
 }
 
-.food_grid .img15{
-    background-image: url("../image/japneses/MOCHI\ 3D.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+.nav #Store {
+  color: var(--green);
 }
 
-.food_grid .img16{
-    background-image: url("../image/indian/Pav\ Bhaji\ Food.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+/* ---- Cart Icon ---- */
+.cart {
+  position: relative;
+  height: 44px;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+  flex-shrink: 0;
 }
 
-.food_grid .img17{
-    background-image: url("../image/korean/Ramen\ Noodles\ \(Vegan\ Recipe\).jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+.cart:hover {
+  background: var(--bg);
+  cursor: pointer;
 }
 
-.food_grid .img18{
-    background-image: url("../image/japneses/Okonomiyaki\ .jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+.cart a {
+  color: var(--black);
+  font-size: 20px;
 }
 
-.food_grid .img19{
-    background-image: url("../image/indian/pizza.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+.cart .cart-count {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--red);
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
 }
 
-.food_grid .img20{
-    background-image: url("../image/korean/Soondubu\ Jjigae.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+/* =============================================
+   TOAST
+   ============================================= */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--green);
+  color: var(--white);
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s;
+  z-index: 9999;
+  box-shadow: var(--shadow);
 }
 
-.food_grid .img21{
-    background-image: url("../image/japneses/Onigiri.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+#toast.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.food_grid .img22{
-    background-image: url("../image/indian/Salted\ Lassi\ -\ Indian\ Style\ Yogurt\ based\ Summer\ Beverage\ Recipe\ -\ Step\ by\ Step.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.food_grid .img23{
-    background-image: url("../image/korean/Tteokbokki\ with\ Boiled\ Eggs.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img24{
-    background-image: url("../image/japneses/Sushi\ dinner.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img25{
-    background-image: url("../image/indian/Sambar\ Powder\ Recipe.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img26{
-    background-image: url("../image/korean/Tteokguk\ \(Korean\ Rice\ Cake\ Soup\)\ -\ Beyond\ Kimchee.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img27{
-    background-image: url("../image/japneses/Takoyaki.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img28{
-    background-image: url("../image/indian/Subway\ Sandwiches\,\ According\ to\ Dietitians.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img29{
-    background-image: url("../image/korean/𝗕𝗶𝗯𝗶𝗺𝗯𝗮𝗽\ \(𝗞𝗼𝗿𝗲𝗮𝗻\ 𝗠𝗶𝘅𝗲𝗱\ 𝗥𝗶𝗰𝗲\ 𝗕𝗼𝘄𝗹\).jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img30{
-    background-image: url("../image/japneses/tonkatsu.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img31{
-    background-image: url("../image/indian/Yummy\ Rawa\ Idli\ from\ Diksha\'s\ Cafe.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img32{
-    background-image: url("../image");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img33{
-    background-image: url("../image");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img34{
-    background-image: url("../image");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img35{
-    background-image: url("../image");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img36{
-    background-image: url("../image");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img37{
-    background-image: url("../image");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img38{
-    background-image: url("../image");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img39{
-    background-image: url("../image");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-}.food_grid .img40{
-    background-image: url("../image");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+/* =============================================
+   FILTER SECTION — Improved & Responsive
+   ============================================= */
+.filter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  margin: 20px auto;
+  width: calc(100% - 40px);
+  max-width: 900px;
+  padding: 14px 20px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
-
-
-/* item detial box */
-.food_grid #item_detial{
-    width: 96%;
-    position: relative;
-    top: -25px;
-    left: 7px;
+/* Price label */
+#lable_price {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  white-space: nowrap;
 }
 
-/* item price */
-.food_grid #item_detial #price{
-    font-size: 20px;
-    font-weight: 600;
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;  
-    color: white;  
+/* Price inputs */
+#minPrice,
+#maxPrice {
+  height: 38px;
+  width: 90px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid #ddd;
+  padding: 0 10px;
+  font-size: 14px;
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  color: var(--black);
 }
 
-/* item name */
-.food_grid #item_detial #item_name{
-   margin-top: 5px;
-    font-size: 22px;
-    font-weight: 600;
-}
-.food_grid #item_detial #item{
-    position: relative;
-}
-.food_grid #item_detial #detail{
-    margin-bottom: 10px;
+#minPrice:focus,
+#maxPrice:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
 }
 
-/* cart buttno */
-.food_grid #item_detial .to_cart{
-    height: 37px;
-    width: 140px;
-    background-color: #5FC943;
-    border-radius: 20px;
-    border: none;
+/* Apply Filter button */
+#filterBtn {
+  height: 38px;
+  padding: 0 18px;
+  background: var(--green);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background var(--transition), transform 0.15s;
+  white-space: nowrap;
+}
+
+#filterBtn:hover {
+  background: var(--dark-green);
+}
+
+#filterBtn:active {
+  transform: scale(0.96);
+}
+
+/* Category dropdown */
+#categoryFilter {
+  height: 38px;
+  padding: 0 12px;
+  background: var(--bg);
+  border: 1.5px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.25s;
+}
+
+#categoryFilter:focus {
+  border-color: var(--green);
+}
+
+/* =============================================
+   FOOD GRID
+   ============================================= */
+.food_grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  padding: 10px 20px 60px;
+}
+
+.food_grid .food_cart {
+  width: 240px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.food_grid .food_cart:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* ---- Image Box ---- */
+.food_grid .img_box {
+  height: 190px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  flex-shrink: 0;
+}
+
+.food_grid .img_box::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
+}
+
+/* ---- All Food Images ---- */
+.food_grid .img1  { background-image: url("../image/indian/crack\ burgers.jpg"); }
+.food_grid .img2  { background-image: url("../image/japneses/Amazing\ Miso\ Soup_\ A\ Delicious\ Comforting\ Classic.jpg"); }
+.food_grid .img3  { background-image: url("../image/korean/Bulgogi\ \(Spicy\ Bulgogi\).jpg"); background-position-y: -60px; }
+.food_grid .img4  { background-image: url("../image/indian/Crispy\ Aloo\ Samosa.jpg"); }
+.food_grid .img5  { background-image: url("../image/japneses/Egg\ Salad\ Sandwich.jpg"); }
+.food_grid .img6  { background-image: url("../image/korean/Japchae.jpg"); background-position-y: -30px; }
+.food_grid .img7  { background-image: url("../image/indian/dosa\ on.jpg"); }
+.food_grid .img8  { background-image: url("../image/korean/Kimbap.jpg"); }
+.food_grid .img9  { background-image: url("../image/japneses/Japanese\ Curry\ on\ Rice.jpg"); }
+.food_grid .img10 { background-image: url("../image/indian/Gulab\ Jamun!\ Indian\ Dessert\ Recipes\ _\ Sweets\ _\ Desserts.jpg"); }
+.food_grid .img11 { background-image: url("../image/korean/kimchi.jpg"); }
+.food_grid .img12 { background-image: url("../image/japneses/melonpan.jpg"); }
+.food_grid .img13 { background-image: url("../image/indian/Paneer\ Butter\ Masala\ Recipe\ Ever!.jpg"); }
+.food_grid .img14 { background-image: url("../image/korean/Mandu\ with\ Sweet\ Soy\ Drizzle.jpg"); }
+.food_grid .img15 { background-image: url("../image/japneses/MOCHI\ 3D.jpg"); }
+.food_grid .img16 { background-image: url("../image/indian/Pav\ Bhaji\ Food.jpg"); }
+.food_grid .img17 { background-image: url("../image/korean/Ramen\ Noodles\ \(Vegan\ Recipe\).jpg"); }
+.food_grid .img18 { background-image: url("../image/japneses/Okonomiyaki\ .jpg"); }
+.food_grid .img19 { background-image: url("../image/indian/pizza.jpg"); }
+.food_grid .img20 { background-image: url("../image/korean/Soondubu\ Jjigae.jpg"); }
+.food_grid .img21 { background-image: url("../image/japneses/Onigiri.jpg"); }
+.food_grid .img22 { background-image: url("../image/indian/Salted\ Lassi\ -\ Indian\ Style\ Yogurt\ based\ Summer\ Beverage\ Recipe\ -\ Step\ by\ Step.jpg"); }
+.food_grid .img23 { background-image: url("../image/korean/Tteokbokki\ with\ Boiled\ Eggs.jpg"); }
+.food_grid .img24 { background-image: url("../image/japneses/Sushi\ dinner.jpg"); }
+.food_grid .img25 { background-image: url("../image/indian/Sambar\ Powder\ Recipe.jpg"); }
+.food_grid .img26 { background-image: url("../image/korean/Tteokguk\ \(Korean\ Rice\ Cake\ Soup\)\ -\ Beyond\ Kimchee.jpg"); }
+.food_grid .img27 { background-image: url("../image/japneses/Takoyaki.jpg"); }
+.food_grid .img28 { background-image: url("../image/indian/Subway\ Sandwiches\,\ According\ to\ Dietitians.jpg"); }
+.food_grid .img29 { background-image: url("../image/korean/𝗕𝗶𝗯𝗶𝗺𝗯𝗮𝗽\ \(𝗞𝗼𝗿𝗲𝗮𝗻\ 𝗠𝗶𝘅𝗲𝗱\ 𝗥𝗶𝗰𝗲\ 𝗕𝗼𝘄𝗹\).jpg"); }
+.food_grid .img30 { background-image: url("../image/japneses/tonkatsu.jpg"); }
+.food_grid .img31 { background-image: url("../image/indian/Yummy\ Rawa\ Idli\ from\ Diksha\'s\ Cafe.jpg"); }
+.food_grid .img32 { background-image: url("../image"); }
+.food_grid .img33 { background-image: url("../image"); }
+.food_grid .img34 { background-image: url("../image"); }
+.food_grid .img35 { background-image: url("../image"); }
+.food_grid .img36 { background-image: url("../image"); }
+.food_grid .img37 { background-image: url("../image"); }
+.food_grid .img38 { background-image: url("../image"); }
+.food_grid .img39 { background-image: url("../image"); }
+.food_grid .img40 { background-image: url("../image"); }
+
+/* ---- Item Detail Box ---- */
+#item_detial {
+  padding: 12px 14px 4px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#item_detial #price {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+
+#item_detial #item_name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+#item_detial #item {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+#item_detial #detail {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+/* ---- Add to Cart Button ---- */
+.to_cart {
+  display: block;
+  margin: 4px 0 12px;
+  height: 38px;
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  background: var(--green);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--transition), transform 0.15s;
+}
+
+.to_cart:hover {
+  background: var(--dark-green);
+}
+
+.to_cart:active {
+  transform: scale(0.96);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.footer {
+  background: #111;
+  color: var(--white);
+  padding: 50px 0 0;
+  margin-top: 60px;
+}
+
+.footer-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-box {
+  flex: 1;
+  min-width: 160px;
+  padding: 0 16px;
+}
+
+.footer-box:not(:last-child) {
+  border-right: 1px solid #333;
+}
+
+.footer-box h3 {
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #333;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.footer-box ul {
+  list-style: none;
+}
+
+.footer-box ul li {
+  margin: 8px 0;
+  cursor: pointer;
+  font-size: 14px;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.footer-box ul li:hover {
+  color: var(--orange);
+}
+
+.footer-box p {
+  padding-top: 8px;
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.8;
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 10px;
+  border: 1px solid #333;
+  transition: background var(--transition), color var(--transition);
+}
+
+.social i {
+  font-size: 20px;
+}
+
+.social a:hover {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #222;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* =============================================
+   RESPONSIVE — Tablet (≤ 1024px)
+   ============================================= */
+@media (max-width: 1024px) {
+  .food_grid .food_cart {
+    width: 220px;
+  }
+
+  .nav input {
+    width: 240px;
+  }
+
+  .filter {
+    max-width: 98%;
+  }
+}
+
+/* =============================================
+   RESPONSIVE — Mobile (≤ 768px)
+   ============================================= */
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .username {
+    min-width: auto;
+  }
+
+  .username pre,
+  .username div {
     font-size: 15px;
-}
-.food_grid #item_detial .to_cart:hover{
-    cursor: pointer;
-}
-.food_grid #item_detial .to_cart:active{
-    transform: scale(0.9);
-    
-}
+  }
 
-/* footer */
+  .nav {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: flex-start;
+  }
 
-.footer{
-    background: black;
-    color: white;
-    padding: 50px 0;
-    position: relative;
-    top:130px;
-}
+  .nav input {
+    width: 100%;
+    order: -1;
+  }
 
-.footer-container{
-    width:90%;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-}
+  .nav div {
+    font-size: 14px;
+    height: 36px;
+    padding: 0 10px;
+  }
 
-/* footer columns */
+  /* Filter — stack nicely on mobile */
+  .filter {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 16px;
+    margin: 12px auto;
+    width: calc(100% - 24px);
+    border-radius: var(--radius);
+  }
 
-.footer-box{
-    width:20%;
-    padding:0 19px;
-}
+  #lable_price {
+    font-size: 13px;
+  }
 
-/* vertical divider line */
+  #minPrice,
+  #maxPrice {
+    width: 80px;
+    height: 36px;
+    font-size: 13px;
+  }
 
-.footer-box:not(:last-child){
-    border-right:1px solid #444;
-}
+  #filterBtn {
+    height: 36px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
 
-/* heading */
+  #categoryFilter {
+    height: 36px;
+    font-size: 13px;
+    flex: 1;
+    min-width: 120px;
+  }
 
-.footer-box h3{
-    margin-bottom:15px;
-    padding-bottom:8px;
-    border-bottom:1px solid #444;
-}
+  /* Food cards — 2 per row */
+  .food_grid {
+    gap: 14px;
+    padding: 10px 12px 50px;
+  }
 
-/* list */
+  .food_grid .food_cart {
+    width: calc(50% - 10px);
+    min-width: 140px;
+  }
 
-.footer-box ul{
-    list-style:none;
-    padding:0;
-}
+  .food_grid .img_box {
+    height: 150px;
+  }
 
-.footer-box ul li{
-    margin:8px 0;
-    cursor:pointer;
-}
-.footer-box p{
-    padding-top: 10px;
-}
+  #item_detial #item_name {
+    font-size: 14px;
+  }
 
-.footer-box ul li:hover{
-    color:orange;
-}
+  #item_detial #price {
+    font-size: 12px;
+  }
 
-/* social */
+  /* Footer */
+  .footer-box {
+    width: 100%;
+    border-right: none !important;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #222;
+  }
 
-.social a{
-    display:inline-block;
-    margin-right:10px;
-    text-decoration:none;
-    color:white;
-    padding:6px 10px;
-    border-radius:5px;
-}
-.social i{
-    font-size: 30px;
-}
-
-.social a:hover{
-    background:white;
-    color:black;
-}
-
-/* bottom text */
-
-.footer-bottom{
-    text-align:center;
-    border-top:1px solid #333;
-    margin-top:40px;
-    padding-top:20px;
-    font-size:14px;
+  #toast {
+    bottom: 16px;
+    right: 12px;
+    font-size: 13px;
+    padding: 10px 16px;
+  }
 }
 
+/* =============================================
+   RESPONSIVE — Small Mobile (≤ 480px)
+   ============================================= */
+@media (max-width: 480px) {
+  /* Filter — wrap price inputs to 2nd line */
+  .filter {
+    gap: 8px;
+  }
 
+  #minPrice,
+  #maxPrice {
+    width: 70px;
+  }
 
-/* ================= LARGE TABLETS ================= */
-@media (max-width: 1024px){
+  #categoryFilter {
+    width: 100%;
+    flex: unset;
+  }
 
-    main{
-        justify-content: center;
-    }
+  #filterBtn {
+    width: 100%;
+    border-radius: var(--radius-sm);
+  }
 
-    .content{
-        max-width: 500px;
-        text-align: center;
-    }
+  /* Food cards — 1 per row on very small screens */
+  .food_grid .food_cart {
+    width: 100%;
+    max-width: 340px;
+  }
 
-    .img{
-        height: 350px;
-        width: 350px;
-    }
+  .food_grid .img_box {
+    height: 200px;
+  }
+
+  /* Footer */
+  .footer-container {
+    width: 95%;
+  }
+}
+
+/* =============================================
+   RESPONSIVE — Extra Small (≤ 360px)
+   ============================================= */
+@media (max-width: 360px) {
+  .username pre,
+  .username div {
+    font-size: 13px;
+  }
+
+  #minPrice,
+  #maxPrice {
+    width: 60px;
+    font-size: 12px;
+  }
+
+  #filterBtn {
+    font-size: 12px;
+  }
 }

@@ -1,87 +1,274 @@
+/* =============================================
+   CuisineCraft — payment_meth.css
+   Responsive | Better UI | Same Style
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,600&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --red:        #d63031;
+  --orange:     #F9A946;
+  --green:      #27ae60;
+  --dark-green: #1e8449;
+  --black:      #111111;
+  --white:      #ffffff;
+  --bg:         #f5f1ee;
+  --text-muted: #777;
+  --glass-bg:   rgba(255, 255, 255, 0.18);
+  --glass-bdr:  rgba(255, 255, 255, 0.35);
+  --blur:       blur(18px);
+  --radius-sm:  10px;
+  --radius:     18px;
+  --radius-lg:  24px;
+  --shadow-sm:  0 2px 12px rgba(0,0,0,0.10);
+  --shadow:     0 8px 32px rgba(0,0,0,0.16);
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* =============================================
+   BODY — same login.jpg background
+   ============================================= */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+  background-image: url("../image/login.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px;
 }
 
+/* =============================================
+   MAIN CARD
+   ============================================= */
 .payment-container {
-    display: flex;
-    max-width: 900px;
-    margin: 50px auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 860px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-bdr);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
 }
 
-.left-side, .right-side {
-    padding: 25px;
-}
-
+/* =============================================
+   LEFT SIDE — Image
+   ============================================= */
 .left-side {
-    flex: 1;
-    background-color: #e6f0ff; /* soft blue background for trust vibe */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 24px;
+  border-right: 1px solid var(--glass-bdr);
 }
 
 .left-side img {
-    max-width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 300px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  object-fit: cover;
 }
 
+/* =============================================
+   RIGHT SIDE — Payment Form
+   ============================================= */
 .right-side {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  flex: 1;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .right-side h2 {
-    color: #007bff;
-    margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 4px;
 }
 
+/* ---- Payment Options ---- */
 .payment-option {
-    margin-bottom: 15px;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1.5px solid rgba(0,0,0,0.12);
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--black);
 }
 
 .payment-option:hover:not(.disabled) {
-    border-color: #007bff;
-    box-shadow: 0 3px 8px rgba(0,123,255,0.2);
+  border-color: var(--green);
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 3px 12px rgba(39, 174, 96, 0.18);
 }
 
+/* Selected option highlight */
+.payment-option input[type="radio"]:checked + label {
+  color: var(--green);
+}
+
+.payment-option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--green);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.payment-option label {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Disabled options */
 .payment-option.disabled {
-    background-color: #f0f0f0;
-    color: #aaa;
-    cursor: not-allowed;
+  background: rgba(240, 240, 240, 0.6);
+  border-color: #e0e0e0;
+  color: #bbb;
+  cursor: not-allowed;
 }
 
-.payment-option input {
-    cursor: pointer;
+.payment-option.disabled label {
+  color: #bbb;
+  cursor: not-allowed;
 }
 
+/* "Not Available" label */
+#not_ava {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--red);
+  letter-spacing: 0.3px;
+  padding-left: 4px;
+  margin-top: -8px;
+}
+
+/* ---- Place Order Button ---- */
 .place-order {
-    padding: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 17px;
-    width: 100%;
-    transition: background-color 0.2s ease;
+  height: 52px;
+  width: 100%;
+  margin-top: 6px;
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 28px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 18px rgba(39, 174, 96, 0.38);
+  transition: background var(--transition), transform 0.15s;
 }
+
 .place-order:hover {
-    background-color: #0056b3;
+  background: var(--dark-green);
+}
+
+.place-order:active {
+  transform: scale(0.98);
+}
+
+/* =============================================
+   RESPONSIVE — Tablet (≤ 768px)
+   ============================================= */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    padding: 24px 14px 50px;
+  }
+
+  .payment-container {
+    flex-direction: column;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .left-side {
+    border-right: none;
+    border-bottom: 1px solid var(--glass-bdr);
+    padding: 24px 20px;
+  }
+
+  .left-side img {
+    max-width: 220px;
+    max-height: 200px;
+  }
+
+  .right-side {
+    padding: 24px 20px;
+    gap: 12px;
+  }
+
+  .right-side h2 {
+    font-size: 21px;
+  }
+}
+
+/* =============================================
+   RESPONSIVE — Small Mobile (≤ 480px)
+   ============================================= */
+@media (max-width: 480px) {
+  body {
+    background-attachment: scroll;
+    padding: 16px 10px 40px;
+  }
+
+  .payment-container {
+    border-radius: var(--radius);
+  }
+
+  .left-side img {
+    max-width: 160px;
+    max-height: 160px;
+  }
+
+  .right-side {
+    padding: 20px 16px;
+  }
+
+  .right-side h2 {
+    font-size: 19px;
+  }
+
+  .payment-option {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .payment-option label {
+    font-size: 14px;
+  }
+
+  .place-order {
+    height: 48px;
+    font-size: 15px;
+  }
 }

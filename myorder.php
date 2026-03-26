@@ -3,6 +3,11 @@ include "actions/db.php"; // db connection
 include "actions/cart_count.php";
 include "actions/my_order.php";
 ?>
+<?php if(isset($_GET['order']) && $_GET['order'] == 'success'): ?>
+    <script>
+        alert("🎉 Order Confirmed Successfully!");
+    </script>
+<?php endif; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -167,8 +172,8 @@ $imagePath = strpos($order['image'], 'image/') === 0 ? $order['image'] : 'image/
 <?php endforeach; ?>
 
 <?php else: ?>
+<div class="order_not_found"><p>No orders found!</p></div>
 
-<p>No orders found!</p>
 
 <?php endif; ?>
 

@@ -360,7 +360,7 @@ include "actions/cart_count.php";
                     </div>
                     <div id="item">⭐ 4.4 · 15–20 mins</div>
                     <div id="detail">
-                        Japanese, Bakery, Sweet Bread
+                        Japanese, Bakery
                     </div>
                     <button class="to_cart">Add To Cart</button>
                 </div>
@@ -809,173 +809,20 @@ include "actions/cart_count.php";
 
                 <div id="item_detial">
                     <div id="price">
-                            456456
+                            ????
                     </div>
                     <div id="item_name">
-                        65475
+                        ?????
                     </div>
-                    <div id="item">5345793</div>
+                    <div id="item">?????</div>
                     <div id="detail">
-                        insaihngjh
+                        ????????????
                     </div>
                     <button class="to_cart">Add To Cart</button>
                 </div>
 
             </div>
-            <div class="food_cart" id="food_cart">
-                <div class="img_box img33"></div>
-                <!-- detail -->
-
-                <div id="item_detial">
-                    <div id="price">
-                            456456
-                    </div>
-                    <div id="item_name">
-                        65475
-                    </div>
-                    <div id="item">5345793</div>
-                    <div id="detail">
-                        insaihngjh
-                    </div>
-                    <button class="to_cart">Add To Cart</button>
-                </div>
-
-            </div>
-            <div class="food_cart" id="food_cart">
-                <div class="img_box img34"></div>
-                <!-- detail -->
-
-                <div id="item_detial">
-                    <div id="price">
-                            456456
-                    </div>
-                    <div id="item_name">
-                        65475
-                    </div>
-                    <div id="item">5345793</div>
-                    <div id="detail">
-                        insaihngjh
-                    </div>
-                    <button class="to_cart">Add To Cart</button>
-                </div>
-
-            </div>
-            <div class="food_cart" id="food_cart">
-                <div class="img_box img35"></div>
-                <!-- detail -->
-
-                <div id="item_detial">
-                    <div id="price">
-                            456456
-                    </div>
-                    <div id="item_name">
-                        65475
-                    </div>
-                    <div id="item">5345793</div>
-                    <div id="detail">
-                        insaihngjh
-                    </div>
-                    <button class="to_cart">Add To Cart</button>
-                </div>
-
-            </div>
-            <div class="food_cart" id="food_cart">
-                <div class="img_box img36"></div>
-                <!-- detail -->
-
-                <div id="item_detial">
-                    <div id="price">
-                            456456
-                    </div>
-                    <div id="item_name">
-                        65475
-                    </div>
-                    <div id="item">5345793</div>
-                    <div id="detail">
-                        insaihngjh
-                    </div>
-                    <button class="to_cart">Add To Cart</button>
-                </div>
-
-            </div>
-            <div class="food_cart" id="food_cart">
-                <div class="img_box img37"></div>
-                <!-- detail -->
-
-                <div id="item_detial">
-                    <div id="price">
-                            456456
-                    </div>
-                    <div id="item_name">
-                        65475
-                    </div>
-                    <div id="item">5345793</div>
-                    <div id="detail">
-                        insaihngjh
-                    </div>
-                    <button class="to_cart">Add To Cart</button>
-                </div>
-
-            </div>
-            <div class="food_cart" id="food_cart">
-                <div class="img_box img38"></div>
-                <!-- detail -->
-
-                <div id="item_detial">
-                    <div id="price">
-                            456456
-                    </div>
-                    <div id="item_name">
-                        65475
-                    </div>
-                    <div id="item">5345793</div>
-                    <div id="detail">
-                        insaihngjh
-                    </div>
-                    <button class="to_cart">Add To Cart</button>
-                </div>
-
-            </div>
-            <div class="food_cart" id="food_cart">
-                <div class="img_box img39"></div>
-                <!-- detail -->
-
-                <div id="item_detial">
-                    <div id="price">
-                            456456
-                    </div>
-                    <div id="item_name">
-                        65475
-                    </div>
-                    <div id="item">5345793</div>
-                    <div id="detail">
-                        insaihngjh
-                    </div>
-                    <button class="to_cart">Add To Cart</button>
-                </div>
-
-            </div>
-
-
-            <div class="food_cart" id="food_cart">
-                <div class="img_box img40"></div>
-                <!-- detail -->
-
-                <div id="item_detial">
-                    <div id="price">
-                            456456
-                    </div>
-                    <div id="item_name">
-                        65475
-                    </div>
-                    <div id="item">5345793</div>
-                    <div id="detail">
-                        insaihngjh
-                    </div>
-                    <button class="to_cart">Add To Cart</button>
-                </div>
-
-            </div>
+        
             <!-- add more cart here -->
         </div>
     </main>
